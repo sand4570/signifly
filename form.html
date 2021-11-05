@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="progress-wrapper"></div>
+
+    <form>
+      <section id="personal-info">
+        <h2>Welcome we are extited to customise your feed</h2>
+        <h3>But first you need to awnser a few questions</h3>
+        <label for="name">Your name*</label>
+        <input type="text" id="name" />
+        <label for="age">Your age*</label>
+        <input id="age" type="number" min="0" max="99" />
+        <label for="mail">Your E-mail*</label>
+        <input id="mail" type="email" />
+        <label for="password">Choose a password*</label>
+        <input id="password" type="password" />
+        <button>Next page</button>
+      </section>
+      <section id="game-questions">
+        <h2>Great job</h2>
+        <h3>
+          Time to really get into it, first we need to know which games we are
+          playing
+        </h3>
+      </section>
+      <section id="porsonalise-question">
+        <h2>Way to go</h2>
+        <h3>
+          We are almost done, we just need to figure out where to help you
+          improve
+        </h3>
+        <label for="sleep">How much do you usualy sleep at night</label>
+        <input id="sleep" type="range" min="0" max="10" />
+        <span id="sleep-amount"></span>
+
+        <label for="energy"
+          >How much energy drink and soda do you consume daily</label
+        >
+        <input id="energy" type="range" min="0" max="10" />
+        <span id="energy-amount"></span>
+
+        <fieldset>
+          <legend>What kind of diet do you have</legend>
+          <input id="fastfood" type="radio" />
+          <label for="fastfood">Mostly fastfood and quick meals</label>
+          <input id="variet" type="radio" />
+          <label for="variet">Good variety of homemade and fastfood</label>
+          <input id="healthy" type="radio" />
+          <label for="healthy">Mostly vegetables and whole grains </label>
+        </fieldset>
+
+        <label for="workout">How often do you work out</label>
+        <input id="workout" type="range" min="0" max="5" />
+        <span id="workout-amount"></span>
+        <span>times a week</span>
+
+        <fieldset>
+          <legend>Do you have any game related pain?</legend>
+          <input id="hand-pain" type="checkbox" />
+          <label for="hand-pain">Mouse hand pain</label>
+          <input id="headache" type="checkbox" />
+          <label for="headache">Headache</label>
+          <input id="back-pain" type="checkbox" />
+          <label for="back-pain">Back pain</label>
+          <input id="ear-pain" type="checkbox" />
+          <label for="ear-pain">Ear pain</label>
+          <input id="ringing-ear" type="checkbox" />
+          <label for="ringing-ear">Ringing of the ears</label>
+          <input id="other" type="checkbox" />
+          <label for="other">Other</label>
+          <input id="other-txt" />
+          <input id="none" type="checkbox" />
+          <label for="none">None</label>
+        </fieldset>
+
+        <h3>Last couple of questions, you are doing great</h3>
+
+        <label for="gaming">How many hours a day do you play videogames</label>
+        <input id="gaming" type="range" min="0" max="10" />
+        <span id="gaming-amount"></span>
+
+        <fieldset>
+          <legend>How does your games run</legend>
+          <input id="great" type="radio" />
+          <label for="great">Great it runs smoothly</label>
+          <input id="fine" type="radio" />
+          <label for="fine">Fine but I sometimes experience lack</label>
+          <input id="bad" type="radio" />
+          <label for="bad">Bad it always lack</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>How do you feel when playing</legend>
+          <input id="zone" type="radio" />
+          <label for="zone">In the zone & peaceful</label>
+          <input id="stressed" type="radio" />
+          <label for="stressed">Stressed</label>
+          <input id="burnt" type="radio" />
+          <label for="burnt">Burnt out</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Which of these area would you like to improve</legend>
+          <input id="com" type="radio" />
+          <label for="com">Comunication</label>
+          <input id="mind" type="radio" />
+          <label for="mind">Mind</label>
+          <input id="physic" type="radio" />
+          <label for="physic">Physic CHANGE</label>
+        </fieldset>
+
+        <button type="submit">See the result</button>
+      </section>
+      <section id="result"></section>
+    </form>
+  </body>
+</html>
