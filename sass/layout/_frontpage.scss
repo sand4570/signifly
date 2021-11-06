@@ -1,0 +1,70 @@
+@use "../base/colors";
+
+body {
+	background-color: colors.$bg-color;
+}
+
+#heading {
+	display: block;
+	margin: 270px auto 0;
+	width: 100vw;
+	height: 400px;
+	margin-bottom: 4.25rem;
+	z-index: -1;
+	position: fixed;
+}
+
+#heading p {
+	max-width: 38.125rem;
+	text-align: center;
+	margin: 0 auto;
+	color: colors.$primary-color;
+	font-size: 0.8125rem;
+	line-height: 150%;
+}
+
+#article_wrapper {
+	column-count: 4;
+	column-gap: 40px;
+	margin: 0 80px;
+	position: relative;
+	top: 100vh;
+}
+
+.article {
+	width: 270px;
+	display: inline-block;
+	margin-bottom: 20px;
+	break-inside: avoid;
+	border-radius: 5px;
+}
+
+#button_wrapper {
+	display: flex;
+	gap: 15px;
+	width: 80vw;
+	position: fixed;
+	left: 37%;
+	top: 100vh;
+	z-index: 5;
+}
+
+#button_wrapper button {
+	border-radius: 40px;
+	background-color: colors.$secondary-color;
+	padding: 1.1875rem 2.5rem;
+	line-height: 110%;
+	letter-spacing: 0.1em;
+	border: none;
+	color: colors.$font-color;
+	font-size: 0.75rem;
+}
+
+#button_wrapper button:nth-child(2) {
+	background-color: #ffb591;
+}
+
+.button_animate {
+	transition: 0.5s ease-in;
+	transform: translateY(-100px);
+}

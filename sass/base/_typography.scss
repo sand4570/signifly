@@ -1,0 +1,49 @@
+@use "../base/colors";
+
+@font-face {
+	font-family: sharpiro-bold;
+	src: url(fonts/sharpiro-bold.woff2);
+}
+
+@font-face {
+	font-family: sharpiro-regular;
+	src: url(fonts/sharpiro-regular.woff2);
+}
+
+@font-face {
+	font-family: uniform-black;
+	src: url(fonts/uniform-pro-con-black.woff2);
+}
+
+@font-face {
+	font-family: uniform-medium;
+	src: url(fonts/uniform-pro-con-medium.woff2);
+}
+
+h1 {
+	font-family: uniform-black, sans-serif;
+	color: colors.$primary-color;
+	font-size: 4.375rem;
+	line-height: 95%;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 4px;
+	transition: all 0.4s ease-in;
+}
+
+#h1_second {
+	-webkit-text-stroke: 1px colors.$primary-color;
+	-webkit-text-fill-color: transparent;
+	margin-bottom: 4.25rem;
+	transition: all 0.4s ease-in;
+}
+
+p {
+	font-family: sharpiro-regular, sans-serif;
+	transition: all 0.4s ease-in;
+}
+
+.animate {
+	color: colors.$heading-color-animate !important;
+	-webkit-text-stroke: 1px colors.$heading-color-animate !important;
+}
