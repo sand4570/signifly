@@ -32,7 +32,7 @@ body {
 }
 
 .article {
-	width: 270px;
+	width: 20vw;
 	display: inline-block;
 	margin-bottom: 20px;
 	break-inside: avoid;
@@ -67,4 +67,36 @@ body {
 .button_animate {
 	transition: 0.5s ease-in;
 	transform: translateY(-100px);
+}
+
+@media only screen and (max-width: 1200px) {
+	#article_wrapper {
+		column-count: 3;
+		column-gap: 20px;
+		margin: 0 auto;
+		padding: 0 10vw;
+	}
+}
+
+@media only screen and (max-width: 750px) {
+	#article_wrapper {
+		column-count: 2;
+		column-gap: 10px;
+		margin: 0 auto;
+		padding: 0 2vw;
+		width: 80vw;
+	}
+	.article {
+		width: 200px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	#article_wrapper {
+		column-count: 2;
+		column-gap: 10px;
+		margin: 0 auto;
+		padding: 0 2vw;
+		width: 99vw;
+	}
 }
