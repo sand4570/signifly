@@ -29,6 +29,9 @@
 
 		fieldset {
 			border: none;
+			label {
+				margin-bottom: 25px;
+			}
 		}
 
 		input {
@@ -57,7 +60,6 @@
 			fieldset {
 				display: flex;
 				flex-direction: column;
-				margin-left: 3rem;
 				margin-bottom: 3rem;
 			}
 		}

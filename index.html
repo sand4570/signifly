@@ -131,22 +131,22 @@
 						<h3>But first you need to answer a few questions</h3>
 						<div class="input_wrapper">
 							<label for="name">Your name</label>
-							<input type="text" id="name" name="name" required />
+							<input type="text" id="name" name="name" placeholder=" " required />
 							<p class="error-message">This field is required</p>
 						</div>
 						<div class="input_wrapper">
 							<label for="age">Your age</label>
-							<input id="age" type="text" pattern="^[0-9]*$" required />
+							<input id="age" type="text" pattern="^[0-9]*$" placeholder=" " required />
 							<p class="error-message">This field requires numbers only</p>
 						</div>
 						<div class="input_wrapper">
 							<label for="mail">Your E-mail</label>
-							<input id="mail" type="email" required />
+							<input id="mail" type="email" placeholder=" " required />
 							<p class="error-message">This field requires a valid email</p>
 						</div>
 						<div class="input_wrapper">
 							<label for="password">Choose a password</label>
-							<input id="password" type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required />
+							<input id="password" type="password" placeholder=" " pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required />
 							<p class="error-message">This field requires at least eight characters, at least one letter and one number</p>
 						</div>
 						<button id="button1">lets begin</button>
@@ -158,19 +158,19 @@
 						<fieldset class="checkbox">
 							<legend>What games do you play</legend>
 							<div id="game-col-1">
-								<input id="cs:go" class="game" type="checkbox" value="CS:GO" />
+								<input id="cs:go" class="game" type="checkbox" value="CS:GO" required />
 								<label for="cs:go">CS:GO</label>
-								<input id="tekken" class="game" type="checkbox" value="Tekken" />
+								<input id="tekken" class="game" type="checkbox" value="Tekken" required />
 								<label for="tekken">Tekken</label>
-								<input id="fifa" class="game" type="checkbox" value="FIFA" />
+								<input id="fifa" class="game" type="checkbox" value="FIFA" required />
 								<label for="fifa">FIFA</label>
-								<input id="mario" class="game" type="checkbox" value="Super Mario" />
+								<input id="mario" class="game" type="checkbox" value="Super Mario" required />
 								<label for="mario">Super Mario</label>
-								<input id="fortnite" class="game" type="checkbox" value="Fortnite" />
+								<input id="fortnite" class="game" type="checkbox" value="Fortnite" required />
 								<label for="fortnite">Fortnite</label>
-								<input id="call-of-duty" class="game" type="checkbox" value="Call of Duty" />
+								<input id="call-of-duty" class="game" type="checkbox" value="Call of Duty" required />
 								<label for="call-of-duty">Call of Duty</label>
-								<input id="sims" class="game" type="checkbox" value="The Sims" />
+								<input id="sims" class="game" type="checkbox" value="The Sims" required />
 
 								<label for="sims">The Sims</label>
 							</div>
@@ -238,7 +238,7 @@
 						<span id="workout-amount">3</span>
 						<span>times a week</span><br />
 
-						<fieldset>
+						<fieldset class="checkbox second">
 							<legend>Do you have any physical game related pain?</legend>
 							<input id="hand-pain" type="checkbox" value="Hand pain" class="pain" />
 							<label for="hand-pain">Mouse hand pain</label>
