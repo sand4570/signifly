@@ -21,6 +21,10 @@
   form {
     width: 60%;
 
+    fieldset {
+      border: none;
+    }
+
     input {
       margin-bottom: 1.5rem;
       height: 1.5rem;

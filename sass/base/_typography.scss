@@ -79,7 +79,15 @@ label {
   color: colors.$font-color;
   font-size: 1.25rem;
   line-height: 95%;
-  //text-align: center;
+}
+
+legend {
+  font-family: sharpiro-bold, sans-serif;
+  color: colors.$font-color;
+  font-size: 1.25rem;
+  line-height: 95%;
+  margin-bottom: 2.5rem;
+  margin-left: -3rem;
 }
 
 input {
