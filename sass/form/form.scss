@@ -36,5 +36,12 @@
     label {
       margin-bottom: 1.5rem;
     }
+
+    #porsonalise-question {
+      fieldset {
+        display: flex;
+        flex-direction: column;
+      }
+    }
   }
 }

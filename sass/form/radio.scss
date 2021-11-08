@@ -1,0 +1,10 @@
+input[type="radio"]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  margin-left: -2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid #54536d;
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in;
+}
