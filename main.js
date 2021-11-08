@@ -46,15 +46,26 @@ function navScroll() {
   if (document.documentElement.scrollTop > 200) {
     document.querySelector("#button_wrapper").classList.add("button_animate");
   } else {
-    document
-      .querySelector("#button_wrapper")
-      .classList.remove("button_animate");
+    document.querySelector("#button_wrapper").classList.remove("button_animate");
   }
 }
 
 //Starting function
 function init() {
   events();
+  suitMyGoal();
+}
+//make body not scrollable when the overlay is active
+function suitMyGoal() {
+  document.querySelector("#form_button").addEventListener("click", function () {
+    console.log("suit my goal just got clicked");
+    document.querySelector("body").classList.add("no_scroll");
+    document.querySelector("#form-wrapper").classList.remove("hidden");
+    document.querySelector("#personal-info").style.position = "static";
+    document.querySelector("#game-questions").style.position = "static";
+    document.querySelector("#porsonalise-question").style.position = "static";
+    document.querySelector("#result").style.position = "static";
+  });
 }
 
 function events() {
@@ -175,9 +186,7 @@ function saveDataPersonal() {
   data.pain = painAr;
 
   data.gaming = document.querySelector("#gaming").value;
-  data.computer = document.querySelector(
-    'input[name="game-run"]:checked'
-  ).value;
+  data.computer = document.querySelector('input[name="game-run"]:checked').value;
   data.feeling = document.querySelector('input[name="feeling"]:checked').value;
   data.improve = document.querySelector('input[name="improve"]:checked').value;
 }
@@ -186,20 +195,14 @@ function saveDataPersonal() {
 function setName() {
   console.log("satName");
   document.querySelector("#game-questions h2").innerHTML += ` ${data.name}`;
-  document.querySelector(
-    "#porsonalise-question h2"
-  ).innerHTML += ` ${data.name}`;
+  document.querySelector("#porsonalise-question h2").innerHTML += ` ${data.name}`;
 }
 
 //Function finding the types of games the user plays from the games selected
 function findGameType(array) {
   const gameTypeAr = [];
 
-  if (
-    array.includes("CS:GO") ||
-    array.includes("Call of Duty") ||
-    array.includes("Overwatch")
-  ) {
+  if (array.includes("CS:GO") || array.includes("Call of Duty") || array.includes("Overwatch")) {
     gameTypeAr.push("FPS");
   }
 
@@ -227,13 +230,7 @@ function findGameType(array) {
     gameTypeAr.push("Simulation");
   }
 
-  if (
-    array.includes("Skyrim") ||
-    array.includes("League of Legends") ||
-    array.includes("Dota") ||
-    array.includes("Valorant") ||
-    array.includes("Diablo")
-  ) {
+  if (array.includes("Skyrim") || array.includes("League of Legends") || array.includes("Dota") || array.includes("Valorant") || array.includes("Diablo")) {
     gameTypeAr.push("Role-playing");
   }
 
