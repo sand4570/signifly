@@ -10,7 +10,9 @@
   justify-content: space-between;
   margin-bottom: 2rem;
 }
-
+.hidden {
+  visibility: hidden;
+}
 .icon_wrapper svg {
   width: 100px;
   height: 100px;

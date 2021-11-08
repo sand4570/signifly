@@ -217,7 +217,7 @@
 
         <form>
                <!-- remember to add the class block back on  -->
-          <section id="personal-info" class="hide">
+          <section id="personal-info" class="block">
             <h2>Welcome we are extited to customise your feed</h2>
             <h3>But first you need to awnser a few questions</h3>
             <label for="name">Your name*</label>
@@ -521,11 +521,12 @@
 
             <button id="button3" type="submit">See the result</button>
           </section>
-          <!-- remember to add the class hide back on the icon div (the div around span and svg) -->
-          <section id="result" class="">
+          <!-- remember to add the class hide back on the icon div (the div around span and svg)
+          added new class hidden since they all have display-flex and there fore does display none not work -->
+          <section id="result" class="hide">
             <h2>The results are in</h2>
             <h3>The chategories chosen for you are</h3>
-            <div id="injuries-icon" class="icon_wrapper">
+            <div id="injuries-icon" class="icon_wrapper hidden">
               <span class="icon_text">Injuries</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 <g id="figure">
@@ -536,7 +537,7 @@
                 </g>
               </svg>
             </div>
-            <div id="training-icon" class="icon_wrapper">
+            <div id="training-icon" class="icon_wrapper hidden">
               <span class="icon_text">Training</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 <g id="figure">
@@ -560,7 +561,7 @@
                 </g>
               </svg>
             </div>
-            <div id="nutrition-icon" class="icon_wrapper">
+            <div id="nutrition-icon" class="icon_wrapper hidden">
               <span class="icon_text">Nutrition</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 <g id="figure">
@@ -577,7 +578,7 @@
               </svg>
               
             </div>
-            <div id="physiology-icon" class="icon_wrapper">
+            <div id="physiology-icon" class="icon_wrapper hidden">
               <span class="icon_text">Physiology</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 <g id="figure">
@@ -595,7 +596,7 @@
               </svg>
               
             </div>
-            <div id="mindset-icon" class="icon_wrapper">
+            <div id="mindset-icon" class="icon_wrapper hidden">
               <span class="icon_text">Mindset</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 <g id="figure">
@@ -629,7 +630,7 @@
               </svg>
               
             </div>
-            <div id="sleep-icon" class="icon_wrapper">
+            <div id="sleep-icon" class="icon_wrapper hidden">
               <span class="icon_text">Sleep</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 <g id="figure">
@@ -645,7 +646,7 @@
               </svg>
               
             </div>
-            <div id="hearing-icon" class="icon_wrapper">
+            <div id="hearing-icon" class="icon_wrapper hidden">
               <span class="icon_text">Hearing</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" > 
                 <g id="figure">
@@ -665,7 +666,7 @@
                 </g>
               </svg>
             </div>
-            <div id="vision-icon" class="icon_wrapper">
+            <div id="vision-icon" class="icon_wrapper hidden">
               <span class="icon_text">Vision</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 <g id="figure">
@@ -692,7 +693,7 @@
                 </g>
               </svg>
             </div>
-            <div id="technology-icon" class="icon_wrapper">
+            <div id="technology-icon" class="icon_wrapper hidden">
               <span class="icon_text">Technology</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 <g id="figure">
@@ -712,7 +713,7 @@
               </svg>
               
             </div>
-            <div id="stress-icon" class="icon_wrapper">
+            <div id="stress-icon" class="icon_wrapper hidden">
               <span class="icon_text">Stress</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 <g id="figure">
