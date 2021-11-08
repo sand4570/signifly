@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="356" height="334" viewBox="0 0 356 334">
+  <defs>
+    <clipPath id="clip-checkmark">
+      <rect width="356" height="334"/>
+    </clipPath>
+  </defs>
+  <g id="checkmark" clip-path="url(#clip-checkmark)">
+    <line id="Line_1" data-name="Line 1" x2="99" y2="121" transform="translate(40 136.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="62"/>
+    <line id="Line_2" data-name="Line 2" x1="177" y2="181" transform="translate(139 76.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="62"/>
+  </g>
+</svg>

@@ -1,36 +1,85 @@
 input[type="checkbox"] {
-  display: none;
+	display: none;
+}
+
+.checkbox label {
+	font-size: 1.2rem;
 }
 
 .checkbox {
-  display: flex;
-  column-gap: 3rem;
-  max-width: 32.5rem;
-  position: relative;
-  justify-content: space-between;
-  padding-left: 3rem;
+	display: flex;
+	column-gap: 3rem;
+	max-width: 42rem;
+	position: relative;
+	justify-content: space-between;
+	font-size: 0.8rem;
 }
 
-input[type="checkbox"]:not(:checked) + label:before {
-  content: "";
-  position: absolute;
-  margin-left: -2rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 1px solid #54536d;
-  border-radius: 4px;
-  transition: background-color 0.2s ease-in;
+.checkbox legend {
+	margin-left: 0rem;
 }
 
-input[type="checkbox"]:not(:checked) + label:after {
-  opacity: 1;
-  transform: scale(1);
-  background-color: turquoise;
+.checkbox input[type="checkbox"] + label {
+	cursor: pointer;
+	position: relative;
+	padding-left: 2.5rem;
+}
+
+.checkbox input[type="checkbox"]:checked + label:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1.5rem;
+	height: 1.5rem;
+	border: 1px solid #54536d;
+	border-radius: 4px;
+	transition: background-color 0.2s ease-in;
+	background-color: #6e44ff;
+}
+
+.checkbox input[type="checkbox"]:not(:checked) + label:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1.5rem;
+	height: 1.5rem;
+	border: 1px solid #54536d;
+	border-radius: 4px;
+	transition: background-color 0.2s ease-in;
+}
+
+.checkbox input[type="checkbox"]:not(:checked):hover + label:before {
+	border: 1px solid #6e44ff;
+}
+
+.checkbox input[type="checkbox"]:not(:checked) + label:after {
+	opacity: 0;
+	transform: scale(0);
+}
+
+.checkbox input[type="checkbox"]:checked + label:after {
+	content: "";
+	background-repeat: no-repeat;
+	background-image: url(img/checkmark.svg);
+	background-size: 80%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1.5rem;
+	height: 1.5rem;
+	transition: all 0.2s;
+	background-position: 50%;
+	border: 1px solid #6e44ff;
+	border-radius: 4px;
+	opacity: 1;
+	transform: scale(1);
 }
 
 #game-col-1,
 #game-col-2,
 #game-col-3 {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
