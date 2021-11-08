@@ -1,294 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
 
-    <style>
-      .hide {
-        display: none;
-      }
+		<style>
+			.hide {
+				display: none;
+			}
 
-      input:valid {
-        border: solid 3px green;
-      }
+			input:valid {
+				border: solid 3px green;
+			}
 
-      input:invalid {
-        border: solid 3px red;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="progress-wrapper">
-      <div id="stops">
-        <div id="stop1" class="stop"></div>
-        <div id="stop2" class="stop"></div>
-        <div id="stop3" class="stop"></div>
-        <div id="stop4" class="stop"></div>
-      </div>
-      <progress id="progressbar" value="0" max="100">0%</progress>
-    </div>
+			input:invalid {
+				border: solid 3px red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="progress-wrapper">
+			<div id="stops">
+				<div id="stop1" class="stop"></div>
+				<div id="stop2" class="stop"></div>
+				<div id="stop3" class="stop"></div>
+				<div id="stop4" class="stop"></div>
+			</div>
+			<progress id="progressbar" value="0" max="100">0%</progress>
+		</div>
 
-    <form>
-      <section id="personal-info">
-        <h2>Welcome we are extited to customise your feed</h2>
-        <h3>But first you need to awnser a few questions</h3>
-        <label for="name">Your name*</label>
-        <input type="text" id="name" name="name" required />
-        <label for="age">Your age*</label>
-        <input id="age" type="number" min="0" max="99" required />
-        <label for="mail">Your E-mail*</label>
-        <input id="mail" type="email" required />
-        <label for="password">Choose a password*</label>
-        <input id="password" type="password" required />
-        <button id="button1">Next page</button>
-      </section>
-      <section id="game-questions" class="hide">
-        <h2>Great job</h2>
-        <h3>
-          Time to really get into it, first we need to know which games we are
-          playing
-        </h3>
+		<form>
+			<section id="personal-info">
+				<h2>Welcome we are extited to customise your feed</h2>
+				<h3>But first you need to awnser a few questions</h3>
+				<div class="input_wrapper">
+					<label for="name">Your name*</label>
+					<input type="text" id="name" name="name" required />
+				</div>
+				<div class="input_wrapper">
+					<label for="age">Your age*</label>
+					<input id="age" type="number" min="0" max="99" required />
+				</div>
+				<div class="input_wrapper">
+					<label for="mail">Your E-mail*</label>
+					<input id="mail" type="email" required />
+				</div>
+				<div class="input_wrapper">
+					<label for="password">Choose a password*</label>
+					<input id="password" type="password" required />
+				</div>
+				<button id="button1">Next page</button>
+			</section>
+			<section id="game-questions" class="hide">
+				<h2>Great job</h2>
+				<h3>Time to really get into it, first we need to know which games we are playing</h3>
 
-        <fieldset>
-          <legend>What games do yoy play</legend>
-          <input id="cs:go" class="game" type="checkbox" value="CS:GO" />
-          <label for="cs:go">CS:GO</label>
-          <input id="tekken" class="game" type="checkbox" value="Tekken" />
-          <label for="tekken">Tekken</label>
-          <input id="fifa" class="game" type="checkbox" value="FIFA" />
-          <label for="fifa">FIFA</label>
-          <input id="mario" class="game" type="checkbox" value="Super Mario" />
-          <label for="mario">Super Mario</label>
-          <input id="fortnite" class="game" type="checkbox" value="Fortnite" />
-          <label for="fortnite">Fortnite</label>
-          <input
-            id="call-of-duty"
-            class="game"
-            type="checkbox"
-            value="Call of Duty"
-          />
-          <label for="call-of-duty">Call of Duty</label>
-          <input id="sims" class="game" type="checkbox" value="The Sims" />
-          <label for="sims">The Sims</label>
-          <input
-            id="mortal-combat"
-            class="game"
-            type="checkbox"
-            value="Mortal Combat"
-          />
-          <label for="mortal-combat">Mortal Combat</label>
-          <input
-            id="guitar-hero"
-            class="game"
-            type="checkbox"
-            value="Guitar Hero"
-          />
-          <label for="guitar-hero">Guitar Hero</label>
-          <input
-            id="world-of-warcraft"
-            class="game"
-            type="checkbox"
-            value="World of Warcraft"
-          />
-          <label for="world-of-warcraft">Wold of Warcraft</label>
-          <input id="skyrim" class="game" type="checkbox" value="Skyrim" />
-          <label for="skyrim">Skyrim</label>
-          <input
-            id="starcraft"
-            class="game"
-            type="checkbox"
-            value="Starcraft"
-          />
-          <label for="starcraft">Starcraft</label>
-          <input id="warcraft" class="game" type="checkbox" value="Warcraft" />
-          <label for="warcraft">Warcraft</label>
-          <input
-            id="league-of-legends"
-            class="game"
-            type="checkbox"
-            value="League of Legends"
-          />
-          <label for="league-of-legends">League of Legends</label>
-          <input id="dota" class="game" type="checkbox" value="Dota" />
-          <label for="dota">Dota</label>
-          <input id="valorant" class="game" type="checkbox" value="Valorant" />
-          <label for="valorant">Valorant</label>
-          <input
-            id="left-for-dead"
-            class="game"
-            type="checkbox"
-            value="Left for dead"
-          />
-          <label for="left-for-dead">Left for dead</label>
-          <input
-            id="overwatch"
-            class="game"
-            type="checkbox"
-            value="Overwatch"
-          />
-          <label for="overwatch">Overwatch</label>
-          <input id="pubg" class="game" type="checkbox" value="PUBG" />
-          <label for="pubg">PUBG</label>
-          <input id="diablo" class="game" type="checkbox" value="Diablo" />
-          <label for="diablo">Diablo</label>
-          <input
-            id="minecraft"
-            class="game"
-            type="checkbox"
-            value="Minecraft"
-          />
-          <label for="minecraft">Minecraft</label>
-        </fieldset>
-        <button id="button2">Next page</button>
-      </section>
-      <section id="porsonalise-question" class="hide">
-        <h2>Way to go</h2>
-        <h3>
-          We are almost done, we just need to figure out where to help you
-          improve
-        </h3>
-        <label for="sleep">How muany hours do you sleep at night</label>
-        <input id="sleep" type="range" min="0" max="10" />
-        <span id="sleep-amount">5</span>
+				<fieldset>
+					<legend>What games do yoy play</legend>
+					<input id="cs:go" class="game" type="checkbox" value="CS:GO" />
+					<label for="cs:go">CS:GO</label>
+					<input id="tekken" class="game" type="checkbox" value="Tekken" />
+					<label for="tekken">Tekken</label>
+					<input id="fifa" class="game" type="checkbox" value="FIFA" />
+					<label for="fifa">FIFA</label>
+					<input id="mario" class="game" type="checkbox" value="Super Mario" />
+					<label for="mario">Super Mario</label>
+					<input id="fortnite" class="game" type="checkbox" value="Fortnite" />
+					<label for="fortnite">Fortnite</label>
+					<input id="call-of-duty" class="game" type="checkbox" value="Call of Duty" />
+					<label for="call-of-duty">Call of Duty</label>
+					<input id="sims" class="game" type="checkbox" value="The Sims" />
+					<label for="sims">The Sims</label>
+					<input id="mortal-combat" class="game" type="checkbox" value="Mortal Combat" />
+					<label for="mortal-combat">Mortal Combat</label>
+					<input id="guitar-hero" class="game" type="checkbox" value="Guitar Hero" />
+					<label for="guitar-hero">Guitar Hero</label>
+					<input id="world-of-warcraft" class="game" type="checkbox" value="World of Warcraft" />
+					<label for="world-of-warcraft">Wold of Warcraft</label>
+					<input id="skyrim" class="game" type="checkbox" value="Skyrim" />
+					<label for="skyrim">Skyrim</label>
+					<input id="starcraft" class="game" type="checkbox" value="Starcraft" />
+					<label for="starcraft">Starcraft</label>
+					<input id="warcraft" class="game" type="checkbox" value="Warcraft" />
+					<label for="warcraft">Warcraft</label>
+					<input id="league-of-legends" class="game" type="checkbox" value="League of Legends" />
+					<label for="league-of-legends">League of Legends</label>
+					<input id="dota" class="game" type="checkbox" value="Dota" />
+					<label for="dota">Dota</label>
+					<input id="valorant" class="game" type="checkbox" value="Valorant" />
+					<label for="valorant">Valorant</label>
+					<input id="left-for-dead" class="game" type="checkbox" value="Left for dead" />
+					<label for="left-for-dead">Left for dead</label>
+					<input id="overwatch" class="game" type="checkbox" value="Overwatch" />
+					<label for="overwatch">Overwatch</label>
+					<input id="pubg" class="game" type="checkbox" value="PUBG" />
+					<label for="pubg">PUBG</label>
+					<input id="diablo" class="game" type="checkbox" value="Diablo" />
+					<label for="diablo">Diablo</label>
+					<input id="minecraft" class="game" type="checkbox" value="Minecraft" />
+					<label for="minecraft">Minecraft</label>
+				</fieldset>
+				<button id="button2">Next page</button>
+			</section>
+			<section id="porsonalise-question" class="hide">
+				<h2>Way to go</h2>
+				<h3>We are almost done, we just need to figure out where to help you improve</h3>
+				<label for="sleep">How muany hours do you sleep at night</label>
+				<input id="sleep" type="range" min="0" max="10" />
+				<span id="sleep-amount">5</span>
 
-        <label for="energy"
-          >How much energy drink and soda do you consume daily</label
-        >
-        <input id="energy" type="range" min="0" max="10" />
-        <span id="energy-amount">5</span>
+				<label for="energy">How much energy drink and soda do you consume daily</label>
+				<input id="energy" type="range" min="0" max="10" />
+				<span id="energy-amount">5</span>
 
-        <fieldset>
-          <legend>What kind of diet do you have</legend>
-          <input id="fastfood" type="radio" name="diet" value="unhealthy" />
-          <label for="fastfood">Mostly fastfood and quick meals</label>
-          <input id="variet" type="radio" name="diet" value="medium" checked />
-          <label for="variet">Good variety of homemade and fastfood</label>
-          <input id="healthy" type="radio" name="diet" value="healthy" />
-          <label for="healthy">Mostly vegetables and whole grains </label>
-        </fieldset>
+				<fieldset>
+					<legend>What kind of diet do you have</legend>
+					<input id="fastfood" type="radio" name="diet" value="unhealthy" />
+					<label for="fastfood">Mostly fastfood and quick meals</label>
+					<input id="variet" type="radio" name="diet" value="medium" checked />
+					<label for="variet">Good variety of homemade and fastfood</label>
+					<input id="healthy" type="radio" name="diet" value="healthy" />
+					<label for="healthy">Mostly vegetables and whole grains </label>
+				</fieldset>
 
-        <label for="workout">How often do you work out</label>
-        <input id="workout" type="range" min="0" max="5" />
-        <span id="workout-amount">3</span>
-        <span>times a week</span>
+				<label for="workout">How often do you work out</label>
+				<input id="workout" type="range" min="0" max="5" />
+				<span id="workout-amount">3</span>
+				<span>times a week</span>
 
-        <fieldset>
-          <legend>Do you have any game related pain?</legend>
-          <input
-            id="hand-pain"
-            type="checkbox"
-            value="Hand pain"
-            class="pain"
-          />
-          <label for="hand-pain">Mouse hand pain</label>
-          <input id="headache" type="checkbox" value="Headache" class="pain" />
-          <label for="headache">Headache</label>
-          <input
-            id="back-pain"
-            type="checkbox"
-            value="Back pain"
-            class="pain"
-          />
-          <label for="back-pain">Back pain</label>
-          <input id="ear-pain" type="checkbox" value="Ear pain" class="pain" />
-          <label for="ear-pain">Ear pain</label>
-          <input
-            id="ringing-ear"
-            type="checkbox"
-            value="Ringing of the ear"
-            class="pain"
-          />
-          <label for="ringing-ear">Ringing of the ears</label>
-          <input id="other" type="checkbox" value="Other" class="pain" />
-          <label for="other">Other</label>
-          <input id="other-txt" name="other-txt" />
-          <input id="none" type="checkbox" value="None" class="pain" />
-          <label for="none">None</label>
-        </fieldset>
+				<fieldset>
+					<legend>Do you have any game related pain?</legend>
+					<input id="hand-pain" type="checkbox" value="Hand pain" class="pain" />
+					<label for="hand-pain">Mouse hand pain</label>
+					<input id="headache" type="checkbox" value="Headache" class="pain" />
+					<label for="headache">Headache</label>
+					<input id="back-pain" type="checkbox" value="Back pain" class="pain" />
+					<label for="back-pain">Back pain</label>
+					<input id="ear-pain" type="checkbox" value="Ear pain" class="pain" />
+					<label for="ear-pain">Ear pain</label>
+					<input id="ringing-ear" type="checkbox" value="Ringing of the ear" class="pain" />
+					<label for="ringing-ear">Ringing of the ears</label>
+					<input id="other" type="checkbox" value="Other" class="pain" />
+					<label for="other">Other</label>
+					<input id="other-txt" name="other-txt" />
+					<input id="none" type="checkbox" value="None" class="pain" />
+					<label for="none">None</label>
+				</fieldset>
 
-        <h3>Last couple of questions, you are doing great</h3>
+				<h3>Last couple of questions, you are doing great</h3>
 
-        <label for="gaming">How many hours a day do you play videogames</label>
-        <input id="gaming" type="range" min="0" max="10" />
-        <span id="gaming-amount">5</span>
+				<label for="gaming">How many hours a day do you play videogames</label>
+				<input id="gaming" type="range" min="0" max="10" />
+				<span id="gaming-amount">5</span>
 
-        <fieldset>
-          <legend>How does your games run</legend>
-          <input id="great" type="radio" name="game-run" value="grest" />
-          <label for="great">Great it runs smoothly</label>
-          <input id="fine" type="radio" name="game-run" value="fine" checked />
-          <label for="fine">Fine but I sometimes experience lack</label>
-          <input id="bad" type="radio" name="game-run" value="bad" />
-          <label for="bad">Bad it always lack</label>
-        </fieldset>
+				<fieldset>
+					<legend>How does your games run</legend>
+					<input id="great" type="radio" name="game-run" value="grest" />
+					<label for="great">Great it runs smoothly</label>
+					<input id="fine" type="radio" name="game-run" value="fine" checked />
+					<label for="fine">Fine but I sometimes experience lack</label>
+					<input id="bad" type="radio" name="game-run" value="bad" />
+					<label for="bad">Bad it always lack</label>
+				</fieldset>
 
-        <fieldset>
-          <legend>How do you feel when playing</legend>
-          <input id="zone" type="radio" name="feeling" value="the-zone" />
-          <label for="zone">In the zone & peaceful</label>
-          <input
-            id="stressed"
-            type="radio"
-            name="feeling"
-            value="stressed"
-            checked
-          />
-          <label for="stressed">Stressed</label>
-          <input id="burnt" type="radio" name="feeling" value="burnt-out" />
-          <label for="burnt">Burnt out</label>
-        </fieldset>
+				<fieldset>
+					<legend>How do you feel when playing</legend>
+					<input id="zone" type="radio" name="feeling" value="the-zone" />
+					<label for="zone">In the zone & peaceful</label>
+					<input id="stressed" type="radio" name="feeling" value="stressed" checked />
+					<label for="stressed">Stressed</label>
+					<input id="burnt" type="radio" name="feeling" value="burnt-out" />
+					<label for="burnt">Burnt out</label>
+				</fieldset>
 
-        <fieldset>
-          <legend>Which of these area would you like to improve</legend>
-          <input id="com" type="radio" name="improve" value="communication" />
-          <label for="com">Comunication</label>
-          <input id="mind" type="radio" name="improve" value="mind" checked />
-          <label for="mind">Mind</label>
-          <input id="physic" type="radio" name="improve" value="physic" />
-          <label for="physic">Physic CHANGE</label>
-        </fieldset>
+				<fieldset>
+					<legend>Which of these area would you like to improve</legend>
+					<input id="com" type="radio" name="improve" value="communication" />
+					<label for="com">Comunication</label>
+					<input id="mind" type="radio" name="improve" value="mind" checked />
+					<label for="mind">Mind</label>
+					<input id="physic" type="radio" name="improve" value="physic" />
+					<label for="physic">Physic CHANGE</label>
+				</fieldset>
 
-        <button id="button3" type="submit">See the result</button>
-      </section>
-      <section id="result" class="hide">
-        <h2>The results are in</h2>
-        <h3>The chategories chosen for you are</h3>
-        <div id="injuries" class="hide">
-          <span>Injuries</span>
-        </div>
-        <div id="training-icon" class="hide">
-          <span>Training</span>
-        </div>
-        <div id="nutrition-icon" class="hide">
-          <span>Nutrition</span>
-        </div>
-        <div id="physiology-icon" class="hide">
-          <span>Physiology</span>
-        </div>
-        <div id="mindset-icon" class="hide">
-          <span>Mindset</span>
-        </div>
-        <div id="sleep-icon" class="hide">
-          <span>Sleep</span>
-        </div>
-        <div id="hearing-icon" class="hide">
-          <span>Hearing</span>
-        </div>
-        <div id="vision-icon" class="hide">
-          <span>Vision</span>
-        </div>
-        <div id="technology-icon" class="hide">
-          <span>Technology</span>
-        </div>
-        <div id="stress-icon" class="hide">
-          <span>Stress</span>
-        </div>
-      </section>
-    </form>
+				<button id="button3" type="submit">See the result</button>
+			</section>
+			<section id="result" class="hide">
+				<h2>The results are in</h2>
+				<h3>The chategories chosen for you are</h3>
+				<div id="injuries" class="hide">
+					<span>Injuries</span>
+				</div>
+				<div id="training-icon" class="hide">
+					<span>Training</span>
+				</div>
+				<div id="nutrition-icon" class="hide">
+					<span>Nutrition</span>
+				</div>
+				<div id="physiology-icon" class="hide">
+					<span>Physiology</span>
+				</div>
+				<div id="mindset-icon" class="hide">
+					<span>Mindset</span>
+				</div>
+				<div id="sleep-icon" class="hide">
+					<span>Sleep</span>
+				</div>
+				<div id="hearing-icon" class="hide">
+					<span>Hearing</span>
+				</div>
+				<div id="vision-icon" class="hide">
+					<span>Vision</span>
+				</div>
+				<div id="technology-icon" class="hide">
+					<span>Technology</span>
+				</div>
+				<div id="stress-icon" class="hide">
+					<span>Stress</span>
+				</div>
+			</section>
+		</form>
 
-    <script src="form.js"></script>
-  </body>
+		<script src="form.js"></script>
+	</body>
 </html>

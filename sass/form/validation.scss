@@ -1,0 +1,10 @@
+input:not(:focus, :placeholder-shown):invalid {
+	border-bottom: 2px solid red;
+}
+
+.error-message {
+	font-size: 13px;
+	position: relative;
+	top: -100px;
+	color: rgb(190, 10, 10);
+}
