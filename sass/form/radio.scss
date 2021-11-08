@@ -1,3 +1,5 @@
+@use "../base/colors";
+
 input[type="radio"] {
   display: none;
 }
@@ -8,7 +10,7 @@ input[type="radio"]:not(:checked) + label:before {
   margin-left: -2rem;
   width: 1.5rem;
   height: 1.5rem;
-  border: 1px solid #54536d;
+  border: 1px solid colors.$border-color;
   border-radius: 50%;
   transition: background-color 0.2s ease-in;
 }
@@ -19,8 +21,8 @@ input[type="radio"]:checked + label:before {
   margin-left: -2rem;
   width: 1.5rem;
   height: 1.5rem;
-  border: 1px solid #54536d;
-  background-color: purple;
+  border: 1px solid colors.$border-color;
+  background-color: colors.$input-checked-color;
   background-image: url("img/cirkel.svg");
   background-repeat: no-repeat;
   background-size: contain;
