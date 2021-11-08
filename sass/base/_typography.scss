@@ -24,7 +24,8 @@ h1,
 h2,
 h3,
 p,
-label {
+label,
+span {
   font-size: 16px;
 }
 
@@ -46,7 +47,8 @@ h1 {
   transition: all 0.4s ease-in;
 }
 
-p {
+p,
+span {
   font-family: sharpiro-regular, sans-serif;
   transition: all 0.4s ease-in;
 }
