@@ -1,0 +1,50 @@
+@use "../base/colors";
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+nav {
+	position: fixed;
+	width: 94vw;
+	display: flex;
+	border-bottom: 1px solid hsla(0, 0%, 100%, 0.11765);
+	color: colors.$font-color;
+	font-size: 1rem;
+	padding: 1.875rem 2.5rem;
+	align-items: center;
+	z-index: 3;
+}
+
+#ezone_logo {
+	flex: 1;
+	position: relative;
+	justify-content: center;
+}
+
+#menu_wrapper {
+	display: flex;
+	align-items: center;
+}
+
+#menu_wrapper p {
+	margin-left: 1.25rem;
+}
+
+#menu {
+	position: relative;
+	top: 3px;
+}
+
+.menu_line {
+	width: 1rem;
+	height: 1px;
+	background-color: colors.$font-color;
+	margin-bottom: 5px;
+}
+
+.scrolled {
+	background-color: rgba(22, 21, 43, 0.3);
+	border-bottom: none;
+}
