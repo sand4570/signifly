@@ -61,10 +61,6 @@ function suitMyGoal() {
     console.log("suit my goal just got clicked");
     document.querySelector("body").classList.add("no_scroll");
     document.querySelector("#form-wrapper").classList.remove("hidden");
-    document.querySelector("#personal-info").style.position = "static";
-    document.querySelector("#game-questions").style.position = "static";
-    document.querySelector("#porsonalise-question").style.position = "static";
-    document.querySelector("#result").style.position = "static";
   });
   document.querySelector(".close-btn").addEventListener("click", function () {
     console.log("close button clicked");

@@ -3,7 +3,9 @@
 .hide {
   display: none;
 }
-
+.static {
+  position: static;
+}
 #form-wrapper {
   position: fixed;
   left: 0;
