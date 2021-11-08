@@ -66,6 +66,11 @@ function suitMyGoal() {
     document.querySelector("#porsonalise-question").style.position = "static";
     document.querySelector("#result").style.position = "static";
   });
+  document.querySelector(".close-btn").addEventListener("click", function () {
+    console.log("close button clicked");
+    document.querySelector("body").classList.remove("no_scroll");
+    document.querySelector("#form-wrapper").classList.add("hidden");
+  });
 }
 
 function events() {
