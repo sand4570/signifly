@@ -12,6 +12,12 @@ const data = {
   sleep: "",
   ernergy: "",
   diet: "",
+  workout: "",
+  pain: [],
+  gaming: "",
+  computer: "",
+  feeling: "",
+  improve: "",
 };
 
 //eventlisteners for buttons to move between sections of the form
@@ -19,9 +25,17 @@ document.querySelector("#button1").addEventListener("click", (e) => {
   e.preventDefault();
   const percent = 33;
 
-  saveDataInfo();
+  const form = document.querySelector("#personal-info input");
 
-  changePage(percent, 1);
+  if (form.checkValidity()) {
+    console.log("valid");
+
+    saveDataInfo();
+    setName();
+    changePage(percent, 1);
+  } else {
+    console.log("invalid");
+  }
 });
 
 document.querySelector("#button2").addEventListener("click", (e) => {
@@ -36,6 +50,10 @@ document.querySelector("#button2").addEventListener("click", (e) => {
 document.querySelector("#button3").addEventListener("click", (e) => {
   e.preventDefault();
   const percent = 100;
+
+  saveDataPersonal();
+  calculateResult();
+
   changePage(percent, 3);
 });
 
@@ -84,7 +102,7 @@ function saveDataInfo() {
   console.log(data);
 }
 
-async function saveDataGames() {
+function saveDataGames() {
   const gameAr = [];
 
   document.querySelectorAll(".game").forEach((game) => {
@@ -97,6 +115,33 @@ async function saveDataGames() {
 
   data.games = gameAr;
   console.log(data);
+}
+
+function saveDataPersonal() {
+  data.sleep = document.querySelector("#sleep").value;
+  data.ernergy = document.querySelector("#energy").value;
+  data.diet = document.querySelector('input[name="diet"]:checked').value;
+  data.workout = document.querySelector("#workout").value;
+
+  const painAr = [];
+
+  document.querySelectorAll(".pain").forEach((pain) => {
+    if (pain.checked) {
+      painAr.push(pain.value);
+    }
+  });
+
+  if (document.querySelector("#other-txt").value) {
+    painAr.push(document.querySelector("#other-txt").value);
+  }
+  data.pain = painAr;
+
+  data.gaming = document.querySelector("#gaming").value;
+  data.computer = document.querySelector(
+    'input[name="game-run"]:checked'
+  ).value;
+  data.feeling = document.querySelector('input[name="feeling"]:checked').value;
+  data.improve = document.querySelector('input[name="improve"]:checked').value;
 }
 
 function findGameType(array) {
@@ -169,4 +214,31 @@ function findGameType(array) {
   }
 
   data.gameType = gameTypeAr;
+}
+
+function calculateResult() {
+  console.log("calculateResult");
+  const injuriIcon = document.querySelector("#injuries-icon");
+  const trainingIcon = document.querySelector("#training-icon");
+  const nutritionIcon = document.querySelector("#nutrition-icon");
+  const physiologyIcon = document.querySelector("#physiology-icon");
+  const mindsetIcon = document.querySelector("#mindset-icon");
+  const sleepIcon = document.querySelector("#sleep-icon");
+  const hearingIcon = document.querySelector("#hearing-icon");
+  const visionIcon = document.querySelector("#vision-icon");
+  const technologyIcon = document.querySelector("#technology-icon");
+  const stressIcon = document.querySelector("#stress-icon");
+
+  if (data.sleep < 6) {
+    console.log("sleep");
+    sleepIcon.classList.remove("hide");
+  }
+}
+
+function setName() {
+  console.log("satName");
+  document.querySelector("#game-questions h2").innerHTML += ` ${data.name}`;
+  document.querySelector(
+    "#porsonalise-question h2"
+  ).innerHTML += ` ${data.name}`;
 }

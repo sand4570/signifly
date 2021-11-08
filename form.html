@@ -10,6 +10,14 @@
       .hide {
         display: none;
       }
+
+      input:valid {
+        border: solid 3px green;
+      }
+
+      input:invalid {
+        border: solid 3px red;
+      }
     </style>
   </head>
   <body>
@@ -28,7 +36,7 @@
         <h2>Welcome we are extited to customise your feed</h2>
         <h3>But first you need to awnser a few questions</h3>
         <label for="name">Your name*</label>
-        <input type="text" id="name" name="name" required pattern="[A-Za-z]" />
+        <input type="text" id="name" name="name" required />
         <label for="age">Your age*</label>
         <input id="age" type="number" min="0" max="99" required />
         <label for="mail">Your E-mail*</label>
@@ -154,11 +162,11 @@
 
         <fieldset>
           <legend>What kind of diet do you have</legend>
-          <input id="fastfood" type="radio" />
+          <input id="fastfood" type="radio" name="diet" value="unhealthy" />
           <label for="fastfood">Mostly fastfood and quick meals</label>
-          <input id="variet" type="radio" />
+          <input id="variet" type="radio" name="diet" value="medium" checked />
           <label for="variet">Good variety of homemade and fastfood</label>
-          <input id="healthy" type="radio" />
+          <input id="healthy" type="radio" name="diet" value="healthy" />
           <label for="healthy">Mostly vegetables and whole grains </label>
         </fieldset>
 
@@ -169,20 +177,35 @@
 
         <fieldset>
           <legend>Do you have any game related pain?</legend>
-          <input id="hand-pain" type="checkbox" />
+          <input
+            id="hand-pain"
+            type="checkbox"
+            value="Hand pain"
+            class="pain"
+          />
           <label for="hand-pain">Mouse hand pain</label>
-          <input id="headache" type="checkbox" />
+          <input id="headache" type="checkbox" value="Headache" class="pain" />
           <label for="headache">Headache</label>
-          <input id="back-pain" type="checkbox" />
+          <input
+            id="back-pain"
+            type="checkbox"
+            value="Back pain"
+            class="pain"
+          />
           <label for="back-pain">Back pain</label>
-          <input id="ear-pain" type="checkbox" />
+          <input id="ear-pain" type="checkbox" value="Ear pain" class="pain" />
           <label for="ear-pain">Ear pain</label>
-          <input id="ringing-ear" type="checkbox" />
+          <input
+            id="ringing-ear"
+            type="checkbox"
+            value="Ringing of the ear"
+            class="pain"
+          />
           <label for="ringing-ear">Ringing of the ears</label>
-          <input id="other" type="checkbox" />
+          <input id="other" type="checkbox" value="Other" class="pain" />
           <label for="other">Other</label>
-          <input id="other-txt" />
-          <input id="none" type="checkbox" />
+          <input id="other-txt" name="other-txt" />
+          <input id="none" type="checkbox" value="None" class="pain" />
           <label for="none">None</label>
         </fieldset>
 
@@ -231,34 +254,36 @@
         <button id="button3" type="submit">See the result</button>
       </section>
       <section id="result" class="hide">
-        <div id="injuries">
+        <h2>The results are in</h2>
+        <h3>The chategories chosen for you are</h3>
+        <div id="injuries" class="hide">
           <span>Injuries</span>
         </div>
-        <div id="training">
+        <div id="training-icon" class="hide">
           <span>Training</span>
         </div>
-        <div id="nutrition">
+        <div id="nutrition-icon" class="hide">
           <span>Nutrition</span>
         </div>
-        <div id="physiology">
+        <div id="physiology-icon" class="hide">
           <span>Physiology</span>
         </div>
-        <div id="mindset">
+        <div id="mindset-icon" class="hide">
           <span>Mindset</span>
         </div>
-        <div id="sleep">
+        <div id="sleep-icon" class="hide">
           <span>Sleep</span>
         </div>
-        <div id="hearing">
+        <div id="hearing-icon" class="hide">
           <span>Hearing</span>
         </div>
-        <div id="vision">
+        <div id="vision-icon" class="hide">
           <span>Vision</span>
         </div>
-        <div id="technology">
+        <div id="technology-icon" class="hide">
           <span>Technology</span>
         </div>
-        <div id="stress">
+        <div id="stress-icon" class="hide">
           <span>Stress</span>
         </div>
       </section>
