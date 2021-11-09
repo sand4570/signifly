@@ -132,22 +132,37 @@
 						<div class="input_wrapper">
 							<label for="name">Your name</label>
 							<input type="text" id="name" name="name" placeholder=" " required />
-							<p class="error-message">This field is required</p>
+							<div class="invalid_wrapper">
+								<img src="img/Invalid.svg" alt="invalid sign" />
+								<p>This field is required</p>
+							</div>
 						</div>
+
 						<div class="input_wrapper">
 							<label for="age">Your age</label>
 							<input id="age" type="text" pattern="^[0-9]*$" placeholder=" " required />
-							<p class="error-message">This field requires numbers only</p>
+							<div class="invalid_wrapper">
+								<img src="img/Invalid.svg" alt="invalid sign" />
+								<p>This field requires numbers only</p>
+							</div>
 						</div>
+
 						<div class="input_wrapper">
 							<label for="mail">Your E-mail</label>
 							<input id="mail" type="email" placeholder=" " required />
-							<p class="error-message">This field requires a valid email</p>
+							<div class="invalid_wrapper">
+								<img src="img/Invalid.svg" alt="invalid sign" />
+								<p>This field requires a valid email</p>
+							</div>
 						</div>
+
 						<div class="input_wrapper">
 							<label for="password">Choose a password</label>
 							<input id="password" type="password" placeholder=" " pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required />
-							<p class="error-message">This field requires at least eight characters, at least one letter and one number</p>
+							<div class="invalid_wrapper">
+								<img src="img/Invalid.svg" alt="invalid sign" />
+								<p>This field requires at least eight characters, at least one letter and one number</p>
+							</div>
 						</div>
 						<button id="button1">lets begin</button>
 					</section>

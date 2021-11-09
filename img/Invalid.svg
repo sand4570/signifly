@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="79" height="82" viewBox="0 0 79 82">
+  <defs>
+    <clipPath id="clip-Invalid">
+      <rect width="79" height="82"/>
+    </clipPath>
+  </defs>
+  <g id="Invalid" clip-path="url(#clip-Invalid)">
+    <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(4 5)" fill="none" stroke="#be0a0a" stroke-width="4">
+      <circle cx="35.5" cy="35.5" r="35.5" stroke="none"/>
+      <circle cx="35.5" cy="35.5" r="33.5" fill="none"/>
+    </g>
+    <rect id="Rectangle_14" data-name="Rectangle 14" width="8" height="30" rx="4" transform="translate(36 18)" fill="#be0a0a"/>
+    <circle id="Ellipse_2" data-name="Ellipse 2" cx="5" cy="5" r="5" transform="translate(35 53)" fill="#be0a0a"/>
+  </g>
+</svg>

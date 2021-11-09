@@ -2,18 +2,34 @@
 	border: 1px solid red;
 	animation: shake-animation 4.72s ease 1;
 	transform-origin: 50% 50%;
+	margin-bottom: 0rem;
 }
 
-.error-message {
-	font-size: 13px;
-	position: relative;
-	top: -100px;
+#personal-info input:not(:focus, :placeholder-shown):invalid ~ .invalid_wrapper {
+	display: inline-flex;
+}
+
+.invalid_wrapper {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+	font-size: 0.3rem;
 	color: rgb(190, 10, 10);
+	align-items: center;
 	display: none;
+	position: relative;
+	top: -76px;
+	.invalid_wrapper input {
+		margin-bottom: 0rem !important;
+	}
 }
 
-#personal-info input:not(:focus, :placeholder-shown):invalid ~ .error-message {
-	display: inline;
+.invalid_wrapper p {
+	font-size: 13px;
+}
+
+.invalid_wrapper img {
+	width: 17px;
 }
 
 @keyframes shake-animation {
