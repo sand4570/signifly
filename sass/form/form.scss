@@ -86,3 +86,10 @@ input:-webkit-autofill {
   color-scheme: dark;
   transition: 99999s background 0s !important;
 }
+//mobil
+@media only screen and (max-width: 750px) {
+  #form-wrapper {
+    padding-left: 3rem;
+    padding-top: 5.5rem;
+  }
+}
