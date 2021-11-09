@@ -78,9 +78,17 @@ function events() {
     e.preventDefault();
     const percent = 33;
 
-    const form = document.querySelector("#personal-info input");
+    const formEls = document.querySelectorAll("#personal-info input");
+    console.log(formEls);
 
-    if (form.checkValidity()) {
+    let isValid = true;
+    formEls.forEach((el) => {
+      if (!el.checkValidity()) {
+        isValid = false;
+      }
+    });
+
+    if (isValid) {
       console.log("valid");
 
       saveDataInfo();
