@@ -60,20 +60,29 @@ span {
 
 h2 {
 	font-family: sharpiro-bold, sans-serif;
-	color: colors.$font-color;
+	color: colors.$primary-color;
 	font-size: 2rem;
 	line-height: 120%;
-	margin-bottom: 1.5rem;
+	margin-bottom: 1rem;
 	letter-spacing: 2px;
+	text-transform: uppercase;
 }
 
 h3 {
 	font-family: sharpiro-bold, sans-serif;
 	color: colors.$font-color;
-	font-size: 1.5rem;
-	line-height: 95%;
+	font-size: 1.1rem;
+	line-height: 150%;
 	margin-bottom: 2.5rem;
 	//text-align: center;
+	max-width: 50vw;
+}
+
+#break_h3 {
+	font-size: 1.3rem;
+	text-transform: uppercase;
+	color: #ffb591;
+	max-width: 70vw;
 }
 
 label {
@@ -86,7 +95,7 @@ label {
 legend {
 	font-family: sharpiro-bold, sans-serif;
 	color: colors.$font-color;
-	font-size: 1.25rem;
+	font-size: 1rem;
 	line-height: 95%;
 	margin-bottom: 2.5rem;
 	margin-left: -3rem;
@@ -102,6 +111,7 @@ input {
 span {
 	font-family: sharpiro-regular, sans-serif;
 	color: colors.$font-color;
-	font-size: 1.25rem;
-	line-height: 95%;
+	font-size: 1rem;
+	position: relative;
+	top: -3px;
 }
