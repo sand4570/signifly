@@ -113,9 +113,6 @@ body {
   #grey_pill {
     top: 20vw;
   }
-  #button_wrapper {
-    left: 11%;
-  }
 }
 // mobil
 @media only screen and (max-width: 750px) {
@@ -144,6 +141,10 @@ body {
     left: -33vw;
     top: 18vh;
     z-index: -10;
+  }
+  #button_wrapper {
+    left: 11%;
+    justify-content: center;
   }
 }
 

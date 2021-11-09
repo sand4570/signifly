@@ -23,3 +23,10 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   margin-top: -14px;
 }
+
+//mobil
+@media only screen and (max-width: 750px) {
+  input[type="range"] {
+    width: 40%;
+  }
+}
