@@ -100,11 +100,12 @@ function events() {
     const percent = 66;
 
     saveDataGames();
+    if (data.games.length > 0) {
+      document.querySelector("#stop2").classList.remove("active-progress");
+      document.querySelector("#stop3").classList.add("active-progress");
 
-    document.querySelector("#stop2").classList.remove("active-progress");
-    document.querySelector("#stop3").classList.add("active-progress");
-
-    changePage(percent, 2);
+      changePage(percent, 2);
+    }
   });
 
   document.querySelector("#button3").addEventListener("click", (e) => {
@@ -120,10 +121,14 @@ function events() {
     changePage(percent, 3);
   });
 
-  document.querySelector("#sleep").addEventListener("change", displayRange);
-  document.querySelector("#energy").addEventListener("change", displayRange);
-  document.querySelector("#workout").addEventListener("change", displayRange);
-  document.querySelector("#gaming").addEventListener("change", displayRange);
+  document.querySelectorAll(".game").forEach((game) => {
+    game.addEventListener("click", checkboxLimit);
+  });
+
+  document.querySelector("#sleep").addEventListener("input", displayRange);
+  document.querySelector("#energy").addEventListener("input", displayRange);
+  document.querySelector("#workout").addEventListener("input", displayRange);
+  document.querySelector("#gaming").addEventListener("input", displayRange);
 }
 
 //Function to move between sections of the form
@@ -346,5 +351,30 @@ function calculateResult() {
   if (data.pain.includes("Headache")) {
     console.log("vision");
     visionIcon.classList.remove("hidden");
+  }
+}
+
+//limit to game checkboxes
+function checkboxLimit() {
+  const limit = 5;
+  let checked = 0;
+
+  document.querySelectorAll(".game").forEach((game) => {
+    if (game.checked) {
+      checked++;
+    }
+  });
+
+  document.querySelectorAll(".locked").forEach((lock) => {
+    lock.classList.remove("locked");
+  });
+
+  if (limit === checked) {
+    document.querySelectorAll(".game").forEach((game) => {
+      if (!game.checked) {
+        const gameId = game.id;
+        document.querySelector(`#${gameId} + label`).classList.add("locked");
+      }
+    });
   }
 }
