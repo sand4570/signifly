@@ -78,12 +78,6 @@
   width: 70%;
 }
 
-html form input:-internal-autofill-selected {
-  background-color: rgb(0, 0, 0, 0) !important;
-  color: #fff !important;
-  transition: 99999s background 0s !important;
-}
-
 input:-webkit-autofill {
   color-scheme: dark;
   transition: 99999s background 0s !important;
