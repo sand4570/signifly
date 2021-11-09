@@ -1,79 +1,84 @@
 @use "../base/colors";
 
 .hide {
-	display: none;
+  display: none;
 }
 .static {
-	position: static;
+  position: static;
 }
 .input_wrapper {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 #form-wrapper {
-	position: fixed;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	width: 100%;
-	background-color: colors.$overlay-bg-color;
-	padding-left: 15rem;
-	padding-top: 7.5rem;
-	padding-bottom: 5rem;
-	display: flex;
-	flex-direction: column;
-	overflow-y: scroll;
-	form {
-		width: 60%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: colors.$overlay-bg-color;
+  padding-left: 15rem;
+  padding-top: 7.5rem;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  form {
+    width: 60%;
 
-		fieldset {
-			border: none;
-			label {
-				margin-bottom: 25px;
-			}
-		}
+    fieldset {
+      border: none;
+      label {
+        margin-bottom: 25px;
+      }
+    }
 
-		input {
-			font-size: 1rem;
-			margin-bottom: 1.5rem;
-			height: 1.3rem;
-			border-radius: 40px;
-			border: 1px solid colors.$border-color;
-			background-color: transparent;
-			padding: 5px 13px;
-		}
+    input {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      height: 1.3rem;
+      border-radius: 40px;
+      border: 1px solid colors.$border-color;
+      background-color: transparent;
+      padding: 5px 13px;
+    }
 
-		input:hover,
-		input:focus {
-			outline: none;
-			border: 1px solid colors.$secondary-color;
-		}
+    input:hover,
+    input:focus {
+      outline: none;
+      border: 1px solid colors.$secondary-color;
+    }
 
-		label {
-			margin-bottom: 10px;
-			font-size: 0.8rem;
-			text-transform: uppercase;
-		}
+    label {
+      margin-bottom: 10px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
 
-		#porsonalise-question {
-			fieldset {
-				display: flex;
-				flex-direction: column;
-				margin-bottom: 3rem;
-			}
-		}
-	}
+    #porsonalise-question {
+      fieldset {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3rem;
+      }
+    }
+  }
 }
 
 #name {
-	width: 60%;
+  width: 60%;
 }
 
 #age {
-	width: 15%;
+  width: 15%;
 }
 
 #mail {
-	width: 70%;
+  width: 70%;
+}
+
+html form input:-internal-autofill-selected {
+  background-color: rgb(0, 0, 0, 0) !important;
+  color: #fff !important;
 }
