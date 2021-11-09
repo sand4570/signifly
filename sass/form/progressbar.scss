@@ -1,46 +1,47 @@
 @use "../base/colors";
 
 #progress-wrapper {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	width: 60%;
+	display: flex;
+	flex-direction: column;
 
-  #stops {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 60%;
+	#stops {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 60%;
 
-    div {
-      width: 1rem;
-      height: 1rem;
-      border-radius: 50%;
-      border: solid 1px colors.$border-color;
-      margin-bottom: 0.5rem;
-    }
-  }
+		div {
+			width: 0.6rem;
+			height: 0.6rem;
+			border-radius: 50%;
+			border: solid 1px colors.$border-color;
+			margin-bottom: 0.5rem;
+		}
+	}
 
-  #progressbar {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 60%;
-  }
+	#progressbar {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		width: 60%;
+		height: 8px;
+	}
 
-  #progressbar::-webkit-progress-bar {
-    background-color: transparent;
-    border: solid 1px colors.$border-color;
-    border-radius: 4px;
-  }
+	#progressbar::-webkit-progress-bar {
+		background-color: transparent;
+		border: solid 1px colors.$border-color;
+		border-radius: 4px;
+	}
 
-  #progressbar::-webkit-progress-value {
-    background-color: colors.$input-checked-color;
-  }
+	#progressbar::-webkit-progress-value {
+		background-color: colors.$input-checked-color;
+	}
 }
 
 .active-progress {
-  background-color: colors.$input-checked-color;
-  width: 1.5rem !important;
-  height: 1.5rem !important;
+	background-color: colors.$input-checked-color;
+	width: 0.6rem !important;
+	height: 0.6rem !important;
+	border: 1px solid colors.$input-checked-color !important;
 }
