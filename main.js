@@ -19,6 +19,7 @@ const data = {
   diet: "",
   workout: "",
   pain: [],
+  painOther: "",
   gaming: "",
   computer: "",
   feeling: "",
@@ -78,9 +79,17 @@ function events() {
     e.preventDefault();
     const percent = 33;
 
-    const form = document.querySelector("#personal-info input");
+    const formEls = document.querySelectorAll("#personal-info input");
+    console.log(formEls);
 
-    if (form.checkValidity()) {
+    let isValid = true;
+    formEls.forEach((el) => {
+      if (!el.checkValidity()) {
+        isValid = false;
+      }
+    });
+
+    if (isValid) {
       console.log("valid");
 
       saveDataInfo();
@@ -90,6 +99,9 @@ function events() {
       document.querySelector("#stop2").classList.add("active-progress");
 
       changePage(percent, 1);
+      document
+        .querySelector("#form-wrapper")
+        .scrollTo({ top: 0, behavior: "smooth" });
     } else {
       console.log("invalid");
     }
@@ -105,6 +117,9 @@ function events() {
       document.querySelector("#stop3").classList.add("active-progress");
 
       changePage(percent, 2);
+      document
+        .querySelector("#form-wrapper")
+        .scrollTo({ top: 0, behavior: "smooth" });
     }
   });
 
@@ -119,11 +134,16 @@ function events() {
     document.querySelector("#stop4").classList.add("active-progress");
 
     changePage(percent, 3);
+    document
+      .querySelector("#form-wrapper")
+      .scrollTo({ top: 0, behavior: "smooth" });
   });
 
   document.querySelectorAll(".game").forEach((game) => {
     game.addEventListener("click", checkboxLimit);
   });
+
+  document.querySelector("#other").addEventListener("click", toggleText);
 
   document.querySelector("#sleep").addEventListener("input", displayRange);
   document.querySelector("#energy").addEventListener("input", displayRange);
@@ -200,8 +220,8 @@ function saveDataPersonal() {
     }
   });
 
-  if (document.querySelector("#other-txt").value) {
-    painAr.push(document.querySelector("#other-txt").value);
+  if (painAr.includes("Other")) {
+    data.painOther = document.querySelector("#other-txt").value;
   }
   data.pain = painAr;
 
@@ -311,57 +331,57 @@ function calculateResult() {
 
   if (data.sleep < 6 || data.ernergy > 5) {
     console.log("sleep");
-    sleepIcon.classList.remove("hidden");
+    sleepIcon.classList.remove("hide");
   }
   if (data.ernergy > 5 || data.diet === "unhealthy") {
     console.log("diet");
-    nutritionIcon.classList.remove("hidden");
+    nutritionIcon.classList.remove("hide");
   }
   if (data.workout < 3 || !data.pain.includes("None")) {
     console.log("physiology");
-    physiologyIcon.classList.remove("hidden");
+    physiologyIcon.classList.remove("hide");
   }
   if (
     data.pain.includes("Ear pain") ||
     data.pain.includes("Ringing of the ear")
   ) {
     console.log("hearing");
-    hearingIcon.classList.remove("hidden");
+    hearingIcon.classList.remove("hide");
   }
   if (!data.pain === "None") {
     console.log("injury");
-    injuriIcon.classList.remove("hidden");
+    injuriIcon.classList.remove("hide");
   }
   if (data.gaming < 5) {
     console.log("training");
-    trainingIcon.classList.remove("hidden");
+    trainingIcon.classList.remove("hide");
   }
   if (data.computer === "fine" || data.computer === "bad") {
     console.log("computer");
-    technologyIcon.classList.remove("hidden");
+    technologyIcon.classList.remove("hide");
   }
   if (!data.feeling === "the-zone") {
     console.log("mindset");
-    mindsetIcon.classList.remove("hidden");
+    mindsetIcon.classList.remove("hide");
   }
   if (data.feeling === "stressed") {
     console.log("stressed");
-    stressIcon.classList.remove("hidden");
+    stressIcon.classList.remove("hide");
   }
   if (data.pain.includes("Headache")) {
     console.log("vision");
-    visionIcon.classList.remove("hidden");
+    visionIcon.classList.remove("hide");
   }
 }
 
 //limit to game checkboxes
 function checkboxLimit() {
   const limit = 5;
-  let checked = 0;
+  let check = 0;
 
   document.querySelectorAll(".game").forEach((game) => {
     if (game.checked) {
-      checked++;
+      check++;
     }
   });
 
@@ -369,12 +389,20 @@ function checkboxLimit() {
     lock.classList.remove("locked");
   });
 
-  if (limit === checked) {
+  if (limit === check) {
     document.querySelectorAll(".game").forEach((game) => {
       if (!game.checked) {
         const gameId = game.id;
         document.querySelector(`#${gameId} + label`).classList.add("locked");
       }
     });
+  }
+}
+
+function toggleText() {
+  if (document.querySelector("#other").checked) {
+    document.querySelector("#other-txt").classList.remove("hide");
+  } else {
+    document.querySelector("#other-txt").classList.add("hide");
   }
 }
