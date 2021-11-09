@@ -90,6 +90,9 @@ function events() {
       document.querySelector("#stop2").classList.add("active-progress");
 
       changePage(percent, 1);
+      document
+        .querySelector("#form-wrapper")
+        .scrollTo({ top: 0, behavior: "smooth" });
     } else {
       console.log("invalid");
     }
@@ -105,6 +108,9 @@ function events() {
       document.querySelector("#stop3").classList.add("active-progress");
 
       changePage(percent, 2);
+      document
+        .querySelector("#form-wrapper")
+        .scrollTo({ top: 0, behavior: "smooth" });
     }
   });
 
@@ -119,6 +125,9 @@ function events() {
     document.querySelector("#stop4").classList.add("active-progress");
 
     changePage(percent, 3);
+    document
+      .querySelector("#form-wrapper")
+      .scrollTo({ top: 0, behavior: "smooth" });
   });
 
   document.querySelectorAll(".game").forEach((game) => {
