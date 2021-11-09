@@ -19,6 +19,7 @@ const data = {
   diet: "",
   workout: "",
   pain: [],
+  painOther: "",
   gaming: "",
   computer: "",
   feeling: "",
@@ -219,8 +220,8 @@ function saveDataPersonal() {
     }
   });
 
-  if (document.querySelector("#other-txt").value) {
-    painAr.push(document.querySelector("#other-txt").value);
+  if (painAr.includes("Other")) {
+    data.painOther = document.querySelector("#other-txt").value;
   }
   data.pain = painAr;
 
