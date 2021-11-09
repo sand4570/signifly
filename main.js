@@ -331,46 +331,46 @@ function calculateResult() {
 
   if (data.sleep < 6 || data.ernergy > 5) {
     console.log("sleep");
-    sleepIcon.classList.remove("hidden");
+    sleepIcon.classList.remove("hide");
   }
   if (data.ernergy > 5 || data.diet === "unhealthy") {
     console.log("diet");
-    nutritionIcon.classList.remove("hidden");
+    nutritionIcon.classList.remove("hide");
   }
   if (data.workout < 3 || !data.pain.includes("None")) {
     console.log("physiology");
-    physiologyIcon.classList.remove("hidden");
+    physiologyIcon.classList.remove("hide");
   }
   if (
     data.pain.includes("Ear pain") ||
     data.pain.includes("Ringing of the ear")
   ) {
     console.log("hearing");
-    hearingIcon.classList.remove("hidden");
+    hearingIcon.classList.remove("hide");
   }
   if (!data.pain === "None") {
     console.log("injury");
-    injuriIcon.classList.remove("hidden");
+    injuriIcon.classList.remove("hide");
   }
   if (data.gaming < 5) {
     console.log("training");
-    trainingIcon.classList.remove("hidden");
+    trainingIcon.classList.remove("hide");
   }
   if (data.computer === "fine" || data.computer === "bad") {
     console.log("computer");
-    technologyIcon.classList.remove("hidden");
+    technologyIcon.classList.remove("hide");
   }
   if (!data.feeling === "the-zone") {
     console.log("mindset");
-    mindsetIcon.classList.remove("hidden");
+    mindsetIcon.classList.remove("hide");
   }
   if (data.feeling === "stressed") {
     console.log("stressed");
-    stressIcon.classList.remove("hidden");
+    stressIcon.classList.remove("hide");
   }
   if (data.pain.includes("Headache")) {
     console.log("vision");
-    visionIcon.classList.remove("hidden");
+    visionIcon.classList.remove("hide");
   }
 }
 
