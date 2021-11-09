@@ -125,6 +125,8 @@ function events() {
     game.addEventListener("click", checkboxLimit);
   });
 
+  document.querySelector("#other").addEventListener("click", toggleText);
+
   document.querySelector("#sleep").addEventListener("input", displayRange);
   document.querySelector("#energy").addEventListener("input", displayRange);
   document.querySelector("#workout").addEventListener("input", displayRange);
@@ -357,11 +359,11 @@ function calculateResult() {
 //limit to game checkboxes
 function checkboxLimit() {
   const limit = 5;
-  let checked = 0;
+  let check = 0;
 
   document.querySelectorAll(".game").forEach((game) => {
     if (game.checked) {
-      checked++;
+      check++;
     }
   });
 
@@ -369,12 +371,20 @@ function checkboxLimit() {
     lock.classList.remove("locked");
   });
 
-  if (limit === checked) {
+  if (limit === check) {
     document.querySelectorAll(".game").forEach((game) => {
       if (!game.checked) {
         const gameId = game.id;
         document.querySelector(`#${gameId} + label`).classList.add("locked");
       }
     });
+  }
+}
+
+function toggleText() {
+  if (document.querySelector("#other").checked) {
+    document.querySelector("#other-txt").classList.remove("hide");
+  } else {
+    document.querySelector("#other-txt").classList.add("hide");
   }
 }
