@@ -32,7 +32,21 @@
 	font-size: 0.3rem;
 	color: rgb(190, 10, 10);
 	align-items: center;
-	display: none;
+	img {
+		width: 17px;
+	}
+	p {
+		font-size: 13px;
+	}
+}
+
+.invalid_wrapper3 {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+	font-size: 0.3rem;
+	color: rgb(190, 10, 10);
+	align-items: center;
 	img {
 		width: 17px;
 	}
