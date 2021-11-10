@@ -21,6 +21,24 @@
   background-color: #f7a689;
 }
 
+.back_button {
+  text-transform: uppercase;
+  background-color: transparent;
+  border: solid 2px colors.$primary-color;
+  border-radius: 40px;
+  padding: 1.1875rem 2.5rem;
+  color: colors.$primary-color;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  margin-top: 20px;
+}
+
+.back_button:hover {
+  cursor: pointer;
+  background-color: #f7a689;
+  color: colors.$font-color;
+}
+
 .close-btn {
   width: 70%;
   display: flex;
