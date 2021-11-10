@@ -9,6 +9,10 @@
 	display: inline-flex;
 }
 
+#personal-info input:not(:focus, :placeholder-shown):invalid ~ .invalid_wrapper2 {
+	display: inline-flex;
+}
+
 .invalid_wrapper {
 	display: flex;
 	flex-direction: row;
@@ -19,8 +23,21 @@
 	display: none;
 	position: relative;
 	top: -71px;
-	.invalid_wrapper input {
-		margin-bottom: 0rem !important;
+}
+
+.invalid_wrapper2 {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+	font-size: 0.3rem;
+	color: rgb(190, 10, 10);
+	align-items: center;
+	display: none;
+	img {
+		width: 17px;
+	}
+	p {
+		font-size: 13px;
 	}
 }
 
