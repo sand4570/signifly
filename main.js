@@ -130,15 +130,19 @@ function events() {
     const percent = 100;
 
     saveDataPersonal();
-    calculateResult();
+    if (data.pain.length > 0) {
+      calculateResult();
 
-    document.querySelector("#stop3").classList.remove("active-progress");
-    document.querySelector("#stop4").classList.add("active-progress");
+      document.querySelector("#stop3").classList.remove("active-progress");
+      document.querySelector("#stop4").classList.add("active-progress");
 
-    changePage(percent, 3);
-    document
-      .querySelector("#form-wrapper")
-      .scrollTo({ top: 0, behavior: "smooth" });
+      changePage(percent, 3);
+      document
+        .querySelector("#form-wrapper")
+        .scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      document.querySelector(".invalid_wrapper3").classList.remove("hide");
+    }
   });
 
   document.querySelectorAll(".game").forEach((game) => {
