@@ -47,9 +47,7 @@ function navScroll() {
   if (document.documentElement.scrollTop > 200) {
     document.querySelector("#button_wrapper").classList.add("button_animate");
   } else {
-    document
-      .querySelector("#button_wrapper")
-      .classList.remove("button_animate");
+    document.querySelector("#button_wrapper").classList.remove("button_animate");
   }
 }
 
@@ -99,9 +97,7 @@ function events() {
       document.querySelector("#stop2").classList.add("active-progress");
 
       changePage(percent, 1);
-      document
-        .querySelector("#form-wrapper")
-        .scrollTo({ top: 0, behavior: "smooth" });
+      document.querySelector("#form-wrapper").scrollTo({ top: 0, behavior: "smooth" });
     } else {
       console.log("invalid");
     }
@@ -117,9 +113,7 @@ function events() {
       document.querySelector("#stop3").classList.add("active-progress");
 
       changePage(percent, 2);
-      document
-        .querySelector("#form-wrapper")
-        .scrollTo({ top: 0, behavior: "smooth" });
+      document.querySelector("#form-wrapper").scrollTo({ top: 0, behavior: "smooth" });
     } else {
       document.querySelector(".invalid_wrapper2").classList.remove("hide");
     }
@@ -137,9 +131,7 @@ function events() {
       document.querySelector("#stop4").classList.add("active-progress");
 
       changePage(percent, 3);
-      document
-        .querySelector("#form-wrapper")
-        .scrollTo({ top: 0, behavior: "smooth" });
+      document.querySelector("#form-wrapper").scrollTo({ top: 0, behavior: "smooth" });
     } else {
       document.querySelector(".invalid_wrapper3").classList.remove("hide");
       document.querySelector(".invalid_wrapper3").scrollIntoView();
@@ -153,16 +145,12 @@ function events() {
     document.querySelector("#stop3").classList.add("active-progress");
     document.querySelector("#stop4").classList.remove("active-progress");
 
-    if (
-      !document.querySelector(".invalid_wrapper3").classList.contains("hide")
-    ) {
+    if (!document.querySelector(".invalid_wrapper3").classList.contains("hide")) {
       document.querySelector(".invalid_wrapper3").classList.add("hide");
     }
 
     changePage(percent, 4);
-    document
-      .querySelector("#form-wrapper")
-      .scrollTo({ top: 0, behavior: "smooth" });
+    document.querySelector("#form-wrapper").scrollTo({ top: 0, behavior: "smooth" });
   });
 
   document.querySelector("#back_button2").addEventListener("click", (e) => {
@@ -172,16 +160,12 @@ function events() {
     document.querySelector("#stop2").classList.add("active-progress");
     document.querySelector("#stop3").classList.remove("active-progress");
 
-    if (
-      !document.querySelector(".invalid_wrapper2").classList.contains("hide")
-    ) {
+    if (!document.querySelector(".invalid_wrapper2").classList.contains("hide")) {
       document.querySelector(".invalid_wrapper2").classList.add("hide");
     }
 
     changePage(percent, 5);
-    document
-      .querySelector("#form-wrapper")
-      .scrollTo({ top: 0, behavior: "smooth" });
+    document.querySelector("#form-wrapper").scrollTo({ top: 0, behavior: "smooth" });
   });
 
   document.querySelector("#back_button1").addEventListener("click", (e) => {
@@ -192,9 +176,7 @@ function events() {
     document.querySelector("#stop2").classList.remove("active-progress");
 
     changePage(percent, 6);
-    document
-      .querySelector("#form-wrapper")
-      .scrollTo({ top: 0, behavior: "smooth" });
+    document.querySelector("#form-wrapper").scrollTo({ top: 0, behavior: "smooth" });
   });
 
   document.querySelectorAll(".game").forEach((game) => {
@@ -293,9 +275,7 @@ function saveDataPersonal() {
   data.pain = painAr;
 
   data.gaming = document.querySelector("#gaming").value;
-  data.computer = document.querySelector(
-    'input[name="game-run"]:checked'
-  ).value;
+  data.computer = document.querySelector('input[name="game-run"]:checked').value;
   data.feeling = document.querySelector('input[name="feeling"]:checked').value;
   data.improve = document.querySelector('input[name="improve"]:checked').value;
 }
@@ -304,20 +284,14 @@ function saveDataPersonal() {
 function setName() {
   console.log("satName");
   document.querySelector("#game-questions h2").innerHTML += ` ${data.name}`;
-  document.querySelector(
-    "#porsonalise-question h2"
-  ).innerHTML += ` ${data.name}`;
+  document.querySelector("#porsonalise-question h2").innerHTML += ` ${data.name}`;
 }
 
 //Function finding the types of games the user plays from the games selected
 function findGameType(array) {
   const gameTypeAr = [];
 
-  if (
-    array.includes("CS:GO") ||
-    array.includes("Call of Duty") ||
-    array.includes("Overwatch")
-  ) {
+  if (array.includes("CS:GO") || array.includes("Call of Duty") || array.includes("Overwatch")) {
     gameTypeAr.push("FPS");
   }
 
@@ -345,13 +319,7 @@ function findGameType(array) {
     gameTypeAr.push("Simulation");
   }
 
-  if (
-    array.includes("Skyrim") ||
-    array.includes("League of Legends") ||
-    array.includes("Dota") ||
-    array.includes("Valorant") ||
-    array.includes("Diablo")
-  ) {
+  if (array.includes("Skyrim") || array.includes("League of Legends") || array.includes("Dota") || array.includes("Valorant") || array.includes("Diablo")) {
     gameTypeAr.push("Role-playing");
   }
 
@@ -381,7 +349,6 @@ function findGameType(array) {
 
   data.gameType = gameTypeAr;
 }
-
 //Function calculating witch articles to show the user
 function calculateResult() {
   console.log("calculateResult");
@@ -396,48 +363,94 @@ function calculateResult() {
   const technologyIcon = document.querySelector("#technology-icon");
   const stressIcon = document.querySelector("#stress-icon");
 
-  if (data.sleep < 6 || data.energy > 5) {
-    console.log("sleep");
-    sleepIcon.classList.remove("hide");
-  }
-  if (data.energy > 5 || data.diet === "unhealthy") {
-    console.log("diet");
-    nutritionIcon.classList.remove("hide");
-  }
-  if (data.workout < 3 || !data.pain.includes("None")) {
-    console.log("physiology");
-    physiologyIcon.classList.remove("hide");
-  }
-  if (
-    data.pain.includes("Ear pain") ||
-    data.pain.includes("Ringing of the ear")
-  ) {
-    console.log("hearing");
-    hearingIcon.classList.remove("hide");
-  }
+  const listResult = [];
+  const every_nth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
+
   if (!data.pain === "None") {
     console.log("injury");
     injuriIcon.classList.remove("hide");
+    listResult.push("injury");
   }
   if (data.gaming < 5) {
     console.log("training");
     trainingIcon.classList.remove("hide");
+    listResult.push("training");
   }
-  if (data.computer === "fine" || data.computer === "bad") {
-    console.log("computer");
-    technologyIcon.classList.remove("hide");
+  if (data.energy > 5 || data.diet === "unhealthy") {
+    console.log("diet");
+    nutritionIcon.classList.remove("hide");
+    listResult.push("diet");
+  }
+  if (data.workout < 3 || !data.pain.includes("None")) {
+    console.log("physiology");
+    physiologyIcon.classList.remove("hide");
+    listResult.push("physiology");
   }
   if (!data.feeling === "the-zone") {
     console.log("mindset");
     mindsetIcon.classList.remove("hide");
+    listResult.push("mindset");
   }
-  if (data.feeling === "stressed") {
-    console.log("stressed");
-    stressIcon.classList.remove("hide");
+  if (data.sleep < 6 || data.energy > 5) {
+    console.log("sleep");
+    sleepIcon.classList.remove("hide");
+    listResult.push("sleep");
+  }
+
+  if (data.pain.includes("Ear pain") || data.pain.includes("Ringing of the ear")) {
+    console.log("hearing");
+    hearingIcon.classList.remove("hide");
+    listResult.push("hearing");
   }
   if (data.pain.includes("Headache")) {
     console.log("vision");
     visionIcon.classList.remove("hide");
+    listResult.push("vision");
+  }
+
+  if (data.computer === "fine" || data.computer === "bad") {
+    console.log("computer");
+    technologyIcon.classList.remove("hide");
+    listResult.push("computer");
+  }
+
+  if (data.feeling === "stressed") {
+    console.log("stressed");
+    stressIcon.classList.remove("hide");
+    listResult.push("stressed");
+  }
+
+  let everyNth2 = every_nth(listResult, 2);
+  console.log("everyNth2", everyNth2);
+  if (everyNth2.includes("injury")) {
+    injuriIcon.classList.add("second_item");
+  }
+  if (everyNth2.includes("training")) {
+    trainingIcon.classList.add("second_item");
+  }
+  if (everyNth2.includes("diet")) {
+    nutritionIcon.classList.add("second_item");
+  }
+  if (everyNth2.includes("physiology")) {
+    physiologyIcon.classList.add("second_item");
+  }
+  if (everyNth2.includes("mindset")) {
+    mindsetIcon.classList.add("second_item");
+  }
+  if (everyNth2.includes("sleep")) {
+    sleepIcon.classList.add("second_item");
+  }
+  if (everyNth2.includes("hearing")) {
+    hearingIcon.classList.add("second_item");
+  }
+  if (everyNth2.includes("vision")) {
+    visionIcon.classList.add("second_item");
+  }
+  if (everyNth2.includes("computer")) {
+    technologyIcon.classList.add("second_item");
+  }
+  if (everyNth2.includes("stressed")) {
+    stressIcon.classList.add("second_item");
   }
 }
 
