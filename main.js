@@ -26,8 +26,6 @@ const data = {
   improve: "",
 };
 
-let isName = false;
-
 //-----------change on scroll----------------
 window.onscroll = function () {
   navScroll();
@@ -143,45 +141,6 @@ function events() {
       .scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  document.querySelector("#back_button3").addEventListener("click", (e) => {
-    e.preventDefault();
-    const percent = 66;
-
-    document.querySelector("#stop4").classList.remove("active-progress");
-    document.querySelector("#stop3").classList.add("active-progress");
-
-    changePage(percent, 4);
-    document
-      .querySelector("#form-wrapper")
-      .scrollTo({ top: 0, behavior: "smooth" });
-  });
-
-  document.querySelector("#back_button2").addEventListener("click", (e) => {
-    e.preventDefault();
-    const percent = 33;
-
-    document.querySelector("#stop3").classList.remove("active-progress");
-    document.querySelector("#stop2").classList.add("active-progress");
-
-    changePage(percent, 5);
-    document
-      .querySelector("#form-wrapper")
-      .scrollTo({ top: 0, behavior: "smooth" });
-  });
-
-  document.querySelector("#back_button1").addEventListener("click", (e) => {
-    e.preventDefault();
-    const percent = 0;
-
-    document.querySelector("#stop2").classList.remove("active-progress");
-    document.querySelector("#stop1").classList.add("active-progress");
-
-    changePage(percent, 6);
-    document
-      .querySelector("#form-wrapper")
-      .scrollTo({ top: 0, behavior: "smooth" });
-  });
-
   document.querySelectorAll(".game").forEach((game) => {
     game.addEventListener("click", checkboxLimit);
   });
@@ -205,15 +164,6 @@ function changePage(percent, count) {
   } else if (count === 3) {
     document.querySelector("#porsonalise-question").classList.add("hide");
     document.querySelector("#result").classList.remove("hide");
-  } else if (count === 4) {
-    document.querySelector("#porsonalise-question").classList.remove("hide");
-    document.querySelector("#result").classList.add("hide");
-  } else if (count === 5) {
-    document.querySelector("#game-questions").classList.remove("hide");
-    document.querySelector("#porsonalise-question").classList.add("hide");
-  } else if (count === 6) {
-    document.querySelector("#personal-info").classList.remove("hide");
-    document.querySelector("#game-questions").classList.add("hide");
   }
 
   const pregress = document.querySelector("#progressbar");
@@ -287,15 +237,11 @@ function saveDataPersonal() {
 
 //Function placing the name of the user on the following pages
 function setName() {
-  if (!isName) {
-    console.log("satName");
-    document.querySelector("#game-questions h2").innerHTML += ` ${data.name}`;
-    document.querySelector(
-      "#porsonalise-question h2"
-    ).innerHTML += ` ${data.name}`;
-
-    isName = true;
-  }
+  console.log("satName");
+  document.querySelector("#game-questions h2").innerHTML += ` ${data.name}`;
+  document.querySelector(
+    "#porsonalise-question h2"
+  ).innerHTML += ` ${data.name}`;
 }
 
 //Function finding the types of games the user plays from the games selected
