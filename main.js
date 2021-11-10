@@ -122,6 +122,8 @@ function events() {
       document
         .querySelector("#form-wrapper")
         .scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      document.querySelector(".invalid_wrapper2").classList.remove("hide");
     }
   });
 
