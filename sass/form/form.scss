@@ -1,119 +1,126 @@
 @use "../base/colors";
 
 .hide {
-	display: none !important;
+  display: none !important;
 }
 .static {
-	position: static;
+  position: static;
 }
 .input_wrapper {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 #form-wrapper {
-	position: fixed;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	width: 100%;
-	background-color: colors.$overlay-bg-color;
-	padding-left: 15rem;
-	padding-top: 7rem;
-	padding-bottom: 20px;
-	display: flex;
-	flex-direction: column;
-	overflow-y: scroll;
-	form {
-		width: 60%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: colors.$overlay-bg-color;
+  padding-left: 15rem;
+  padding-top: 7rem;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  form {
+    width: 60%;
 
-		fieldset {
-			border: none;
-			label {
-				margin-bottom: 25px;
-			}
-		}
+    fieldset {
+      border: none;
+      label {
+        margin-bottom: 25px;
+      }
+    }
 
-		.radio {
-			margin-left: 3rem;
-		}
+    .radio {
+      margin-left: 3rem;
+    }
 
-		input {
-			font-size: 1rem;
-			margin-bottom: 1.5rem;
-			height: 1rem;
-			border-radius: 40px;
-			border: 1px solid colors.$border-color;
-			background-color: transparent;
-			padding: 5px 13px;
-		}
+    input {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      height: 1rem;
+      border-radius: 40px;
+      border: 1px solid colors.$border-color;
+      background-color: transparent;
+      padding: 5px 13px;
+    }
 
-		input:hover,
-		input:focus {
-			outline: none;
-			border: 1px solid colors.$secondary-color;
-		}
+    input:hover,
+    input:focus {
+      outline: none;
+      border: 1px solid colors.$secondary-color;
+    }
 
-		label {
-			margin-bottom: 10px;
-			font-size: 0.8rem;
-			text-transform: uppercase;
-		}
+    label {
+      margin-bottom: 10px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
 
-		#porsonalise-question {
-			fieldset {
-				display: flex;
-				flex-direction: column;
-				margin-bottom: 3rem;
-			}
-		}
-	}
+    #porsonalise-question {
+      fieldset {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3rem;
+      }
+    }
+  }
 }
 
 #name {
-	width: 40%;
+  width: 40%;
 }
 
 #age {
-	width: 15%;
+  width: 15%;
 }
 
 #mail {
-	width: 50%;
+  width: 50%;
 }
 
 #password {
-	width: 60%;
+  width: 60%;
 }
 
 input:-webkit-autofill {
-	color-scheme: dark;
-	transition: 99999s background 0s !important;
+  color-scheme: dark;
+  transition: 99999s background 0s !important;
 }
 
 //mobil
+@media only screen and (max-width: 1200px) {
+  #form-wrapper {
+    padding-left: 3rem;
+    padding-top: 5.5rem;
+  }
+}
+//mobil
 @media only screen and (max-width: 750px) {
-	#form-wrapper {
-		padding-left: 3rem;
-		padding-top: 5.5rem;
-	}
-	.static {
-		width: 129%;
-	}
+  #form-wrapper {
+    padding-left: 3rem;
+    padding-top: 5.5rem;
+  }
+  .static {
+    width: 129%;
+  }
 
-	#name {
-		width: 65%;
-	}
+  #name {
+    width: 65%;
+  }
 
-	#age {
-		width: 20%;
-	}
+  #age {
+    width: 20%;
+  }
 
-	#mail {
-		width: 75%;
-	}
+  #mail {
+    width: 75%;
+  }
 
-	#password {
-		width: 90%;
-	}
+  #password {
+    width: 90%;
+  }
 }

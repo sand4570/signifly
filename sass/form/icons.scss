@@ -6,9 +6,13 @@
 .icon_wrapper {
   display: flex;
   align-items: center;
-  width: 50%;
+  width: 30%;
   justify-content: space-between;
   margin-bottom: 2rem;
+  flex-direction: row-reverse;
+}
+.icon_wrapper:nth-child(even) {
+  margin-left: 30vw;
 }
 .hidden {
   visibility: hidden;
@@ -16,4 +20,25 @@
 .icon_wrapper svg {
   width: 100px;
   height: 100px;
+}
+.result_container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+//mobil
+@media only screen and (max-width: 750px) {
+  .icon_wrapper {
+    flex-direction: row;
+    gap: 1rem;
+    margin-left: 0;
+  }
+  .icon_wrapper:nth-child(even) {
+    flex-direction: row-reverse;
+    margin-left: 3rem;
+  }
+  .icon_wrapper svg {
+    width: 50px;
+    height: 50px;
+  }
 }

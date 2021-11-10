@@ -30,7 +30,7 @@ input[type="checkbox"] {
   content: "";
   position: absolute;
   left: 0;
-  top: 0;
+  // top: 0;
   width: 1.5rem;
   height: 1.5rem;
   border: 1px solid #54536d;
@@ -43,7 +43,7 @@ input[type="checkbox"] {
   content: "";
   position: absolute;
   left: 0;
-  top: 0;
+  // top: 0;
   width: 1.5rem;
   height: 1.5rem;
   border: 1px solid #54536d;
@@ -66,7 +66,7 @@ input[type="checkbox"] {
   background-image: url(img/checkmark.svg);
   background-size: 80%;
   position: absolute;
-  top: 0;
+  // top: 0;
   left: 0;
   width: 1.5rem;
   height: 1.5rem;
@@ -93,5 +93,6 @@ input[type="checkbox"] {
   .checkbox {
     font-size: 0.5rem;
     flex-wrap: wrap;
+    column-gap: 15rem;
   }
 }

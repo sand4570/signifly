@@ -1,23 +1,23 @@
 @use "../base/colors";
 
 @font-face {
-	font-family: sharpiro-bold;
-	src: url(fonts/sharpiro-bold.woff2);
+  font-family: sharpiro-bold;
+  src: url(fonts/sharpiro-bold.woff2);
 }
 
 @font-face {
-	font-family: sharpiro-regular;
-	src: url(fonts/sharpiro-regular.woff2);
+  font-family: sharpiro-regular;
+  src: url(fonts/sharpiro-regular.woff2);
 }
 
 @font-face {
-	font-family: uniform-black;
-	src: url(fonts/uniform-pro-con-black.woff2);
+  font-family: uniform-black;
+  src: url(fonts/uniform-pro-con-black.woff2);
 }
 
 @font-face {
-	font-family: uniform-medium;
-	src: url(fonts/uniform-pro-con-medium.woff2);
+  font-family: uniform-medium;
+  src: url(fonts/uniform-pro-con-medium.woff2);
 }
 
 h1,
@@ -26,108 +26,109 @@ h3,
 p,
 label,
 span {
-	font-size: 16px;
+  font-size: 16px;
 }
 
 h1 {
-	font-family: uniform-black, sans-serif;
-	color: colors.$primary-color;
-	font-size: 4.375rem;
-	line-height: 95%;
-	text-transform: uppercase;
-	text-align: center;
-	letter-spacing: 4px;
-	transition: all 0.4s ease-in;
+  font-family: uniform-black, sans-serif;
+  color: colors.$primary-color;
+  font-size: 4.375rem;
+  line-height: 95%;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 4px;
+  transition: all 0.4s ease-in;
 }
 
 #h1_second {
-	-webkit-text-stroke: 1px colors.$primary-color;
-	-webkit-text-fill-color: transparent;
-	margin-bottom: 4.25rem;
-	transition: all 0.4s ease-in;
+  -webkit-text-stroke: 1px colors.$primary-color;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 4.25rem;
+  transition: all 0.4s ease-in;
 }
 
 p,
 span {
-	font-family: sharpiro-regular, sans-serif;
-	transition: all 0.4s ease-in;
+  font-family: sharpiro-regular, sans-serif;
+  transition: all 0.4s ease-in;
 }
 
 .animate {
-	color: colors.$heading-color-animate !important;
-	-webkit-text-stroke: 1px colors.$heading-color-animate !important;
+  color: colors.$heading-color-animate !important;
+  -webkit-text-stroke: 1px colors.$heading-color-animate !important;
 }
 
 h2 {
-	font-family: sharpiro-bold, sans-serif;
-	color: colors.$primary-color;
-	font-size: 2rem;
-	line-height: 120%;
-	margin-bottom: 1rem;
-	letter-spacing: 2px;
-	text-transform: uppercase;
+  font-family: sharpiro-bold, sans-serif;
+  color: colors.$primary-color;
+  font-size: 2rem;
+  line-height: 120%;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 h3 {
-	font-family: sharpiro-bold, sans-serif;
-	color: colors.$font-color;
-	font-size: 0.9rem;
-	line-height: 150%;
-	margin-bottom: 2rem;
-	//text-align: center;
-	max-width: 40vw;
+  font-family: sharpiro-bold, sans-serif;
+  color: colors.$font-color;
+  font-size: 0.9rem;
+  line-height: 150%;
+  margin-bottom: 2rem;
+  //text-align: center;
+  max-width: 40vw;
 }
 
 #break_h3 {
-	font-size: 1.3rem;
-	text-transform: uppercase;
-	color: #ffb591;
-	max-width: 70vw;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #ffb591;
+  max-width: 70vw;
 }
 
 label {
-	font-family: sharpiro-bold, sans-serif;
-	color: colors.$font-color;
-	font-size: 1.25rem;
-	line-height: 95%;
+  font-family: sharpiro-bold, sans-serif;
+  color: colors.$font-color;
+  font-size: 1.25rem;
+  line-height: 130%;
+  display: flex;
+  align-items: center;
 }
 
 legend {
-	font-family: sharpiro-bold, sans-serif;
-	color: colors.$font-color;
-	font-size: 1rem;
-	line-height: 95%;
-	margin-bottom: 2.5rem;
-	margin-left: -3rem;
+  font-family: sharpiro-bold, sans-serif;
+  color: colors.$font-color;
+  font-size: 1rem;
+  line-height: 95%;
+  margin-bottom: 2.5rem;
+  margin-left: -3rem;
 }
 
 input {
-	font-family: sharpiro-regular, sans-serif;
-	color: colors.$font-color;
-	font-size: 1.25rem;
-	line-height: 95%;
+  font-family: sharpiro-regular, sans-serif;
+  color: colors.$font-color;
+  font-size: 1.25rem;
+  line-height: 95%;
 }
 
 span {
-	font-family: sharpiro-regular, sans-serif;
-	color: colors.$primary-color;
-	font-size: 0.8125rem;
-	position: relative;
-	top: -3px;
+  font-family: sharpiro-regular, sans-serif;
+  color: colors.$primary-color;
+  font-size: 0.8125rem;
+  position: relative;
+  top: -3px;
 }
 //mobil
 @media only screen and (max-width: 750px) {
-	h2 {
-		font-size: 1.2rem;
-	}
-	h3,
-	legend {
-		font-size: 0.9rem;
-		line-height: 135%;
-		max-width: 50vw;
-	}
-	label {
-		font-size: 0.6rem;
-		line-height: 130%;
-	}
+  h2 {
+    font-size: 1.2rem;
+  }
+  h3,
+  legend {
+    font-size: 0.9rem;
+    line-height: 135%;
+    max-width: 50vw;
+  }
+  label {
+    font-size: 0.6rem;
+  }
 }
