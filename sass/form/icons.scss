@@ -2,18 +2,21 @@
 
 .icon_text {
   color: colors.$primary-color;
+  font-size: 1.2rem;
 }
 .icon_wrapper {
   display: flex;
   align-items: center;
-  width: 30%;
+  width: 40%;
   justify-content: space-between;
   margin-bottom: 2rem;
+  gap: 1rem;
   flex-direction: row-reverse;
 }
-.icon_wrapper:nth-child(even) {
+.second_item {
   margin-left: 30vw;
 }
+
 .hidden {
   visibility: hidden;
 }
@@ -34,12 +37,15 @@
     margin-left: 0;
     width: 40vw;
   }
-  .icon_wrapper:nth-child(even) {
+
+  .second_item {
     flex-direction: row-reverse;
-    margin-left: 3rem;
   }
   .icon_wrapper svg {
     width: 50px;
     height: 50px;
+  }
+  .icon_text {
+    font-size: 1rem;
   }
 }
