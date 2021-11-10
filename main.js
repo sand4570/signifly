@@ -26,6 +26,8 @@ const data = {
   improve: "",
 };
 
+let isName = false;
+
 //-----------change on scroll----------------
 window.onscroll = function () {
   navScroll();
@@ -47,7 +49,9 @@ function navScroll() {
   if (document.documentElement.scrollTop > 200) {
     document.querySelector("#button_wrapper").classList.add("button_animate");
   } else {
-    document.querySelector("#button_wrapper").classList.remove("button_animate");
+    document
+      .querySelector("#button_wrapper")
+      .classList.remove("button_animate");
   }
 }
 
@@ -97,7 +101,9 @@ function events() {
       document.querySelector("#stop2").classList.add("active-progress");
 
       changePage(percent, 1);
-      document.querySelector("#form-wrapper").scrollTo({ top: 0, behavior: "smooth" });
+      document
+        .querySelector("#form-wrapper")
+        .scrollTo({ top: 0, behavior: "smooth" });
     } else {
       console.log("invalid");
     }
@@ -113,7 +119,9 @@ function events() {
       document.querySelector("#stop3").classList.add("active-progress");
 
       changePage(percent, 2);
-      document.querySelector("#form-wrapper").scrollTo({ top: 0, behavior: "smooth" });
+      document
+        .querySelector("#form-wrapper")
+        .scrollTo({ top: 0, behavior: "smooth" });
     } else {
       document.querySelector(".invalid_wrapper2").classList.remove("hide");
     }
@@ -131,7 +139,9 @@ function events() {
       document.querySelector("#stop4").classList.add("active-progress");
 
       changePage(percent, 3);
-      document.querySelector("#form-wrapper").scrollTo({ top: 0, behavior: "smooth" });
+      document
+        .querySelector("#form-wrapper")
+        .scrollTo({ top: 0, behavior: "smooth" });
     } else {
       document.querySelector(".invalid_wrapper3").classList.remove("hide");
       document.querySelector(".invalid_wrapper3").scrollIntoView();
@@ -145,12 +155,16 @@ function events() {
     document.querySelector("#stop3").classList.add("active-progress");
     document.querySelector("#stop4").classList.remove("active-progress");
 
-    if (!document.querySelector(".invalid_wrapper3").classList.contains("hide")) {
+    if (
+      !document.querySelector(".invalid_wrapper3").classList.contains("hide")
+    ) {
       document.querySelector(".invalid_wrapper3").classList.add("hide");
     }
 
     changePage(percent, 4);
-    document.querySelector("#form-wrapper").scrollTo({ top: 0, behavior: "smooth" });
+    document
+      .querySelector("#form-wrapper")
+      .scrollTo({ top: 0, behavior: "smooth" });
   });
 
   document.querySelector("#back_button2").addEventListener("click", (e) => {
@@ -160,12 +174,16 @@ function events() {
     document.querySelector("#stop2").classList.add("active-progress");
     document.querySelector("#stop3").classList.remove("active-progress");
 
-    if (!document.querySelector(".invalid_wrapper2").classList.contains("hide")) {
+    if (
+      !document.querySelector(".invalid_wrapper2").classList.contains("hide")
+    ) {
       document.querySelector(".invalid_wrapper2").classList.add("hide");
     }
 
     changePage(percent, 5);
-    document.querySelector("#form-wrapper").scrollTo({ top: 0, behavior: "smooth" });
+    document
+      .querySelector("#form-wrapper")
+      .scrollTo({ top: 0, behavior: "smooth" });
   });
 
   document.querySelector("#back_button1").addEventListener("click", (e) => {
@@ -176,7 +194,9 @@ function events() {
     document.querySelector("#stop2").classList.remove("active-progress");
 
     changePage(percent, 6);
-    document.querySelector("#form-wrapper").scrollTo({ top: 0, behavior: "smooth" });
+    document
+      .querySelector("#form-wrapper")
+      .scrollTo({ top: 0, behavior: "smooth" });
   });
 
   document.querySelectorAll(".game").forEach((game) => {
@@ -275,23 +295,35 @@ function saveDataPersonal() {
   data.pain = painAr;
 
   data.gaming = document.querySelector("#gaming").value;
-  data.computer = document.querySelector('input[name="game-run"]:checked').value;
+  data.computer = document.querySelector(
+    'input[name="game-run"]:checked'
+  ).value;
   data.feeling = document.querySelector('input[name="feeling"]:checked').value;
   data.improve = document.querySelector('input[name="improve"]:checked').value;
 }
 
 //Function placing the name of the user on the following pages
 function setName() {
-  console.log("satName");
-  document.querySelector("#game-questions h2").innerHTML += ` ${data.name}`;
-  document.querySelector("#porsonalise-question h2").innerHTML += ` ${data.name}`;
+  if (!isName) {
+    console.log("satName");
+    document.querySelector("#game-questions h2").innerHTML += ` ${data.name}`;
+    document.querySelector(
+      "#porsonalise-question h2"
+    ).innerHTML += ` ${data.name}`;
+
+    isName = true;
+  }
 }
 
 //Function finding the types of games the user plays from the games selected
 function findGameType(array) {
   const gameTypeAr = [];
 
-  if (array.includes("CS:GO") || array.includes("Call of Duty") || array.includes("Overwatch")) {
+  if (
+    array.includes("CS:GO") ||
+    array.includes("Call of Duty") ||
+    array.includes("Overwatch")
+  ) {
     gameTypeAr.push("FPS");
   }
 
@@ -319,7 +351,13 @@ function findGameType(array) {
     gameTypeAr.push("Simulation");
   }
 
-  if (array.includes("Skyrim") || array.includes("League of Legends") || array.includes("Dota") || array.includes("Valorant") || array.includes("Diablo")) {
+  if (
+    array.includes("Skyrim") ||
+    array.includes("League of Legends") ||
+    array.includes("Dota") ||
+    array.includes("Valorant") ||
+    array.includes("Diablo")
+  ) {
     gameTypeAr.push("Role-playing");
   }
 
@@ -397,7 +435,10 @@ function calculateResult() {
     listResult.push("sleep");
   }
 
-  if (data.pain.includes("Ear pain") || data.pain.includes("Ringing of the ear")) {
+  if (
+    data.pain.includes("Ear pain") ||
+    data.pain.includes("Ringing of the ear")
+  ) {
     console.log("hearing");
     hearingIcon.classList.remove("hide");
     listResult.push("hearing");
