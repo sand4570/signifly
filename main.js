@@ -26,6 +26,8 @@ const data = {
   improve: "",
 };
 
+let isName = false;
+
 //-----------change on scroll----------------
 window.onscroll = function () {
   navScroll();
@@ -283,11 +285,15 @@ function saveDataPersonal() {
 
 //Function placing the name of the user on the following pages
 function setName() {
-  console.log("satName");
-  document.querySelector("#game-questions h2").innerHTML += ` ${data.name}`;
-  document.querySelector(
-    "#porsonalise-question h2"
-  ).innerHTML += ` ${data.name}`;
+  if (!isName) {
+    console.log("satName");
+    document.querySelector("#game-questions h2").innerHTML += ` ${data.name}`;
+    document.querySelector(
+      "#porsonalise-question h2"
+    ).innerHTML += ` ${data.name}`;
+
+    isName = true;
+  }
 }
 
 //Function finding the types of games the user plays from the games selected
