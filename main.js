@@ -15,7 +15,7 @@ const data = {
   gameType: [],
 
   sleep: "",
-  ernergy: "",
+  energy: "",
   diet: "",
   workout: "",
   pain: [],
@@ -142,7 +142,59 @@ function events() {
         .scrollTo({ top: 0, behavior: "smooth" });
     } else {
       document.querySelector(".invalid_wrapper3").classList.remove("hide");
+      document.querySelector(".invalid_wrapper3").scrollIntoView();
     }
+  });
+
+  document.querySelector("#back_button3").addEventListener("click", (e) => {
+    e.preventDefault();
+    const percent = 66;
+
+    document.querySelector("#stop3").classList.add("active-progress");
+    document.querySelector("#stop4").classList.remove("active-progress");
+
+    if (
+      !document.querySelector(".invalid_wrapper3").classList.contains("hide")
+    ) {
+      document.querySelector(".invalid_wrapper3").classList.add("hide");
+    }
+
+    changePage(percent, 4);
+    document
+      .querySelector("#form-wrapper")
+      .scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  document.querySelector("#back_button2").addEventListener("click", (e) => {
+    e.preventDefault();
+    const percent = 33;
+
+    document.querySelector("#stop2").classList.add("active-progress");
+    document.querySelector("#stop3").classList.remove("active-progress");
+
+    if (
+      !document.querySelector(".invalid_wrapper2").classList.contains("hide")
+    ) {
+      document.querySelector(".invalid_wrapper2").classList.add("hide");
+    }
+
+    changePage(percent, 5);
+    document
+      .querySelector("#form-wrapper")
+      .scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  document.querySelector("#back_button1").addEventListener("click", (e) => {
+    e.preventDefault();
+    const percent = 0;
+
+    document.querySelector("#stop1").classList.add("active-progress");
+    document.querySelector("#stop2").classList.remove("active-progress");
+
+    changePage(percent, 6);
+    document
+      .querySelector("#form-wrapper")
+      .scrollTo({ top: 0, behavior: "smooth" });
   });
 
   document.querySelectorAll(".game").forEach((game) => {
@@ -168,6 +220,15 @@ function changePage(percent, count) {
   } else if (count === 3) {
     document.querySelector("#porsonalise-question").classList.add("hide");
     document.querySelector("#result").classList.remove("hide");
+  } else if (count === 4) {
+    document.querySelector("#porsonalise-question").classList.remove("hide");
+    document.querySelector("#result").classList.add("hide");
+  } else if (count === 5) {
+    document.querySelector("#game-questions").classList.remove("hide");
+    document.querySelector("#porsonalise-question").classList.add("hide");
+  } else if (count === 6) {
+    document.querySelector("#personal-info").classList.remove("hide");
+    document.querySelector("#game-questions").classList.add("hide");
   }
 
   const pregress = document.querySelector("#progressbar");
@@ -214,7 +275,7 @@ function saveDataGames() {
 //Function to save input data as an object (third page)
 function saveDataPersonal() {
   data.sleep = document.querySelector("#sleep").value;
-  data.ernergy = document.querySelector("#energy").value;
+  data.energy = document.querySelector("#energy").value;
   data.diet = document.querySelector('input[name="diet"]:checked').value;
   data.workout = document.querySelector("#workout").value;
 
@@ -335,11 +396,11 @@ function calculateResult() {
   const technologyIcon = document.querySelector("#technology-icon");
   const stressIcon = document.querySelector("#stress-icon");
 
-  if (data.sleep < 6 || data.ernergy > 5) {
+  if (data.sleep < 6 || data.energy > 5) {
     console.log("sleep");
     sleepIcon.classList.remove("hide");
   }
-  if (data.ernergy > 5 || data.diet === "unhealthy") {
+  if (data.energy > 5 || data.diet === "unhealthy") {
     console.log("diet");
     nutritionIcon.classList.remove("hide");
   }
